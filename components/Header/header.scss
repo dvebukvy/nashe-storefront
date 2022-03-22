@@ -1,7 +1,131 @@
 .header {
-  background-color: red;
+  $this: &;
+  &__descktop {
+    display: flex;
+    flex-direction: column;
+  }
 
-  &__title {
-    color: blue;
+  &__background {
+    background-color: $grey-10;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    background-color: $grey-10;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__sublink {
+    @include fontSize(14, 16);
+    font-weight: 400;
+
+    &.grey {
+      color: $grey-50;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+  }
+
+  &__separator {
+    width: 1px;
+    height: 16px;
+    margin: 0 8px;
+    background-color: $grey-30;
+  }
+
+  &__sublink-badge {
+    padding: 4px 8px;
+    background-color: $brand-primary-12;
+    color: $brand-primary;
+    @include fontSize(14, 16);
+    font-weight: 400;
+    border-radius: 999px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      background-color: $brand-primary-24;
+    }
+
+    &:active {
+      color: $brand-secondary;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    width: 124px;
+    height: 32px;
+  }
+
+  &__nav {
+    display: flex;
+    position: relative;
+  }
+
+  &__nav-list {
+    display: flex;
+  }
+
+  &__line {
+    position: relative;
+    &::after {
+      width: 100%;
+      height: 1px;
+      background-color: $grey-20;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 4px;
+  }
+
+  &__action-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+
+    &:hover {
+      #{$this}__action-icon {
+        fill: $brand-primary;
+      }
+    }
+  }
+
+  &__action-icon {
+    width: 24px;
+    height: 24px;
+    fill: $brand-secondary;
+  }
+
+  &__mobile {
+    display: none;
+
+    @media (max-width: $s) {
+      display: flex;
+    }
   }
 }

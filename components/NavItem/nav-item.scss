@@ -1,0 +1,148 @@
+.nav-item {
+  $this: &;
+
+  &:hover {
+    #{$this}__body {
+      display: block;
+    }
+  }
+
+  &__header {
+    padding: 24px 8px;
+    // margin: 0 8px;
+    color: $brand-secondary;
+    @include fontSize(14, 16);
+    font-weight: 400;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+
+    &::after {
+      width: calc(100% - 16px);
+      height: 4px;
+      position: absolute;
+      background-color: $brand-primary;
+      content: '';
+      bottom: 0;
+      left: 8px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    &:hover {
+      color: $brand-primary;
+      #{$this}__body {
+        opacity: 1;
+      }
+      #{$this}__link {
+        color: $brand-primary;
+      }
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &.red {
+      #{$this}__link {
+        color: $status-red;
+      }
+      &:hover {
+        
+        &::after {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  &__body {
+    position: absolute;
+    width: 100%;
+    height: 332px;
+    left: 0;
+    padding: 28px 0;
+    background-color: $white;
+    display: none;
+
+    border-bottom: 1px solid $grey-20;
+  }
+
+  &__content {
+    gap: 24px;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__link {
+    @include fontSize(14, 20);
+    font-weight: 400;
+    padding: 6px 0;
+
+    &.bold {
+      font-weight: 500;
+    }
+  }
+
+  &__other {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__container {
+    display: flex;
+  }
+
+  &__categories {
+    display: flex;
+    flex-direction: column;
+    padding-right: 24px;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: '';
+      right: 0;
+      top: -28px;
+      width: 1px;
+      height: 332px;
+      background-color: $grey-20;
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    fill: $brand-secondary;
+    transition: fill 0.3s ease;
+  }
+
+  &__category {
+    padding: 10px 0;
+    width: 172px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: space-between;
+
+    &:hover {
+      #{$this}__link {
+        color: $brand-primary;
+      }
+      #{$this}__icon {
+        fill: $brand-primary;
+      }
+    }
+  }
+
+  &__content-categories {
+    gap: 24px;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    padding: 0 24px;
+  }
+}
