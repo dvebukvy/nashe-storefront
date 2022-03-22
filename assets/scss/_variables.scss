@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+@mixin fontSize($size, $height) {
+  font-size: #{$size / 10}rem;
+  line-height: #{$height / 10}rem;
+}
+
+
+$xl: 1440px;
+$l: 1280px;
+$m: 1024px;
+$s: 768px;
+$xs: 320px;
+
+// Site colors
+$brand-primary: #CF643F;
+$brand-secondary: #662E2C;
+
+$white: #FFFFFF;
+$grey-10: #ECE8E5;
+$grey-15: #F3EFEB;
+$grey-20: #ECE8E5;
+$grey-30: #D4D1CD;
+$grey-40: #B2AFAC;
+$grey-50: #8F8C8A;
+$grey-60: #615F5E;
+$grey-70: #42403F;
+$grey-80: #2C2B2A;
+$grey-90: #1F1E1D;
+$grey-100: #191918;
+$black: #000000;
+
+
+// Colors system
+$status-green: #1B6800;
+$status-green-opacity: rgba(27, 104, 0, 0.12);
+$status-red: #D60700;
+$status-red-opacity: rgba(214, 7, 0, 0.12);
+
+// Fonts
+$font-family-base: -apple-system, 'BlinkMacSystemFont', "Segoe UI", 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$font-family-alt: $font-family-base;
+
+$font-weight-base: 400;
+$font-weight-solid: 700;
+
+
+$transition-duration-base: .3s ease;
