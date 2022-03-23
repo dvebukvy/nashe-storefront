@@ -1,0 +1,14 @@
+.socials {
+  display: flex;
+  gap: 8px;
+
+  &__social {
+    width: 32px;
+    height: 32px;
+    fill: $brand-secondary;
+
+    &:hover {
+      fill: $brand-primary;
+    }
+  }
+}

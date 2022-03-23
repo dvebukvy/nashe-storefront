@@ -12,334 +12,350 @@
             nuxt-link.header__sublink(to='/') Контакты
             nuxt-link.header__sublink(to='/') Блог
             a.header__sublink-badge(href='/', target='_blanc') Оптовый сайт
-          .header__info
-            a.header__sublink(href='tel: +7 800 500–61–13') +7 800 500–61–13
-            .header__separator
-            .header__sublink.grey 9:00–20:00
+          Contact.small
     .header__line
       .container
         .header__bottom
           .header__links
-            svg-icon.header__logo(name='logotype')
+            nuxt-link(to='/')
+              svg-icon.header__logo(name='logotype')
             .header__nav-list
               NavItem(v-for='item in navMenu', :key='item.id', :data='item')
           .header__actions
-            .header__action-button
+            .header__action-button              
               svg-icon.header__action-icon(name='search-24')
             .header__action-button
               svg-icon.header__action-icon(name='user-24')
             .header__action-button
               svg-icon.header__action-icon(name='favorite-24')
             .header__action-button
+              span.header__action-quantity 3
               svg-icon.header__action-icon(name='cart-24')
   .header__mobile
+    .header__mobile-menu(:class='{active: menuVisible}')
+      MobileMenu(:data='navMenu')
+    .header__block
+      .header__action-button(@click='openMenu')
+        svg-icon.header__action-icon(name='list-24')
+      .header__action-button              
+        svg-icon.header__action-icon(name='search-24')
+    .header__block
+      nuxt-link(to='/')
+        svg-icon.header__logo(name='logotype')
+    .header__block
+      .header__action-button              
+        svg-icon.header__action-icon(name='favorite-24')
+      .header__action-button 
+        span.header__action-quantity 3             
+        svg-icon.header__action-icon(name='cart-24')
 </template>
 
 <script>
 export default {
   data() {
     return {
+      menuVisible: false,
       navMenu: [
         {
           title: 'Женщинам',
-          link: '/',
+          link: '/test',
           list: {
             main: [
               {
                 label: 'Распродажа',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Новинки',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Базовая одежда',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Вязаные трикотажные вещи',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Одежда для сна и отдыха',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Размеры 54–60',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Новогодняя коллекция',
-                link: '/',
+                link: '/test',
               },
             ],
             other: [
               {
                 label: 'Джемперы',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Водолазки',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Рубашки, блузки',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Платья',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Футболки',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Брюки',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Легинсы и лосины',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Шорты',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Юбки',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Сорочки',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Туники',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Халаты',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Пижамы и комплекты',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Нижнее бельё',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Головные уборы',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Перчатки и варежки',
-                link: '/',
+                link: '/test',
               },
             ],
           },
         },
         {
           title: 'Мужчинам',
-          link: '/',
+          link: '/test',
           list: {
             main: [
               {
                 label: 'Распродажа',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Новинки',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Базовая одежда',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Размеры 54–60',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Новогодняя коллекция',
-                link: '/',
+                link: '/test',
               },
             ],
             other: [
               {
                 label: 'Джемперы',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Водолазки',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Футболки',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Брюки',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Шорты',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Нижнее бельё',
-                link: '/',
+                link: '/test',
               },
               {
                 label: 'Перчатки и варежки',
-                link: '/',
+                link: '/test',
               },
             ],
           },
         },
         {
           title: 'Детям',
-          link: '/',
+          link: '/test',
           categories: [
             {
               title: 'Девочкам',
-              link: '/',
+              link: '/test',
               list: {
                 main: [
                   {
                     label: 'Распродажа',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Новинки',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Базовая одежда',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Новогодняя коллекция',
-                    link: '/',
+                    link: '/test',
                   },
                 ],
                 other: [
                   {
                     label: 'Брюки',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Водолазки',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Джемперы',
-                    link: '/',
+                    link: '/test',
                   },
                 ],
               },
             },
             {
               title: 'Мальчикам',
-              link: '/',
+              link: '/test',
               list: {
                 main: [
                   {
                     label: 'Распродажа',
-                    link: '/',
+                    link: '/test',
                   },
 
                   {
                     label: 'Новинки',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Новгодняя коллекция',
-                    link: '/',
+                    link: '/test',
                   },
                 ],
                 other: [
                   {
                     label: 'Брюки',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Водолазки',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Джемперы',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Шарфы',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Шорты',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Пижамы',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Перчатки и варежки',
-                    link: '/',
+                    link: '/test',
                   },
                 ],
               },
             },
             {
               title: 'Новорождённым',
-              link: '/',
+              link: '/test',
               list: {
                 main: [
                   {
                     label: 'Распродажа',
-                    link: '/',
+                    link: '/test',
                   },
 
                   {
                     label: 'Новинки',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Новгодняя коллекция',
-                    link: '/',
+                    link: '/test',
                   },
                 ],
                 other: [
                   {
                     label: 'Брюки',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Водолазки',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Джемперы',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Шарфы',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Шорты',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Пижамы',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Перчатки и варежки',
-                    link: '/',
+                    link: '/test',
                   },
                 ],
               },
@@ -348,144 +364,144 @@ export default {
         },
         {
           title: 'Носки и колготки',
-          link: '/',
+          link: '/test',
           categories: [
             {
               title: 'Женщинам',
-              link: '/',
+              link: '/test',
               list: {
                 main: [
                   {
                     label: 'Распродажа',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Новинки',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Базовая одежда',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Новогодняя коллекция',
-                    link: '/',
+                    link: '/test',
                   },
                 ],
                 other: [
                   {
                     label: 'Брюки',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Водолазки',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Джемперы',
-                    link: '/',
+                    link: '/test',
                   },
                 ],
               },
             },
             {
               title: 'Мужчинам',
-              link: '/',
+              link: '/test',
               list: {
                 main: [
                   {
                     label: 'Распродажа',
-                    link: '/',
+                    link: '/test',
                   },
 
                   {
                     label: 'Новинки',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Новгодняя коллекция',
-                    link: '/',
+                    link: '/test',
                   },
                 ],
                 other: [
                   {
                     label: 'Брюки',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Водолазки',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Джемперы',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Шарфы',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Шорты',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Пижамы',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Перчатки и варежки',
-                    link: '/',
+                    link: '/test',
                   },
                 ],
               },
             },
             {
               title: 'Детям',
-              link: '/',
+              link: '/test',
               list: {
                 main: [
                   {
                     label: 'Распродажа',
-                    link: '/',
+                    link: '/test',
                   },
 
                   {
                     label: 'Новинки',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Новгодняя коллекция',
-                    link: '/',
+                    link: '/test',
                   },
                 ],
                 other: [
                   {
                     label: 'Брюки',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Водолазки',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Джемперы',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Шарфы',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Шорты',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Пижамы',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Перчатки и варежки',
-                    link: '/',
+                    link: '/test',
                   },
                 ],
               },
@@ -494,93 +510,93 @@ export default {
         },
         {
           title: 'Подарки',
-          link: '/',
+          link: '/test',
           categories: [
             {
               title: 'Для неё',
-              link: '/',
+              link: '/test',
               list: {
                 main: [
                   {
                     label: 'Распродажа',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Новинки',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Базовая одежда',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Новогодняя коллекция',
-                    link: '/',
+                    link: '/test',
                   },
                 ],
                 other: [
                   {
                     label: 'Брюки',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Водолазки',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Джемперы',
-                    link: '/',
+                    link: '/test',
                   },
                 ],
               },
             },
             {
               title: 'Для него',
-              link: '/',
+              link: '/test',
               list: {
                 main: [
                   {
                     label: 'Распродажа',
-                    link: '/',
+                    link: '/test',
                   },
 
                   {
                     label: 'Новинки',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Новгодняя коллекция',
-                    link: '/',
+                    link: '/test',
                   },
                 ],
                 other: [
                   {
                     label: 'Брюки',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Водолазки',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Джемперы',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Шарфы',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Шорты',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Пижамы',
-                    link: '/',
+                    link: '/test',
                   },
                   {
                     label: 'Перчатки и варежки',
-                    link: '/',
+                    link: '/test',
                   },
                 ],
               },
@@ -589,10 +605,18 @@ export default {
         },
         {
           title: 'Распродажа',
-          link: '/',
+          link: '/test',
         },
       ],
     }
+  },
+  methods: {
+    openMenu() {
+      this.menuVisible = !this.menuVisible
+    }
+  },
+  mounted() {
+    this.$nuxt.$on('closeMenu', this.openMenu)
   },
 }
 </script>

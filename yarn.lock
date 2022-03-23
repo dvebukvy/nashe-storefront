@@ -10270,6 +10270,11 @@ uuid@^3.3.2:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
 
+v-show-slide@^1.8.3:
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/v-show-slide/-/v-show-slide-1.8.3.tgz#79a6956acef96129812af96fdb50e1558c6aebf5"
+  integrity sha512-7I7t5Fp3bNEHJ9RoXWt332T4ecOxp4rori73pURgLVzp0AqRmWbwzFFEACKUnZBiCpkU6lSjYD9/blXdBvlDNQ==
+
 v8-compile-cache@^2.0.3, v8-compile-cache@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-2.3.0.tgz#2de19618c66dc247dcfb6f99338035d8245a2cee"

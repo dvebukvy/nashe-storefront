@@ -1,6 +1,6 @@
 .nav-item {
   $this: &;
-
+  
   &:hover {
     #{$this}__body {
       display: block;
@@ -84,6 +84,11 @@
     padding: 6px 0;
 
     &.bold {
+      font-weight: 500;
+    }
+
+    &.header {
+      @include fontSize(16, 24);
       font-weight: 500;
     }
   }

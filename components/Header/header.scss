@@ -3,6 +3,9 @@
   &__descktop {
     display: flex;
     flex-direction: column;
+    @media (max-width: $s) {
+      display: none;
+    }
   }
 
   &__background {
@@ -27,22 +30,16 @@
     @include fontSize(14, 16);
     font-weight: 400;
 
+    @media (max-width: $s) {
+      @include fontSize(16, 24);
+    }
+
     &.grey {
       color: $grey-50;
     }
   }
 
-  &__info {
-    display: flex;
-    align-items: center;
-  }
-
-  &__separator {
-    width: 1px;
-    height: 16px;
-    margin: 0 8px;
-    background-color: $grey-30;
-  }
+  
 
   &__sublink-badge {
     padding: 4px 8px;
@@ -71,6 +68,11 @@
   &__logo {
     width: 124px;
     height: 32px;
+
+    @media (max-width: $s) {
+      width: 93px;
+      height: 24px;
+    }
   }
 
   &__nav {
@@ -107,12 +109,37 @@
     width: 40px;
     height: 40px;
     cursor: pointer;
+    position: relative;
+    border-radius: 8px;
 
     &:hover {
       #{$this}__action-icon {
         fill: $brand-primary;
       }
     }
+    &:active {
+      #{$this}__action-icon {
+        fill: #ae5435;
+      }
+    }
+  }
+
+  &__action-quantity {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background-color: $brand-primary;
+    border-radius: 100%;
+    color: $white;
+    @include fontSize(10, 12);
+    font-weight: 500;
+    border: 2px solid $white;
   }
 
   &__action-icon {
@@ -122,10 +149,42 @@
   }
 
   &__mobile {
+    position: relative;
     display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    box-shadow: inset 0px -1px 0px $grey-20;
 
     @media (max-width: $s) {
       display: flex;
+    }
+  }
+
+  &__block {
+    display: flex;
+  }
+
+  &__mobile-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    transition: opacity, visibility, transform;
+    transition-timing-function: ease;
+    transition-duration: 0.3s;
+
+    visibility: visible;
+
+    transform: translateY(-32px);
+    opacity: 0;
+    pointer-events: none;
+
+    &.active {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: all;
     }
   }
 }

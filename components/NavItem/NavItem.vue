@@ -1,8 +1,8 @@
 <template lang="pug">
 .nav-item
   .nav-item__header(:class='{"red": data.title === "Распродажа"}')
-    nuxt-link.nav-item__link(to='/') {{ data.title }}
-  .nav-item__body
+    nuxt-link.nav-item__link.header(to='/') {{ data.title }}
+  .nav-item__body    
     .container
       .nav-item__content(v-if='data.list')
         .nav-item__main
@@ -86,7 +86,6 @@ export default {
   methods: {
     setIndex(index) {
       this.activeIndex = index
-      console.log(index)
     },
   },
 }

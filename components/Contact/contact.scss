@@ -1,0 +1,33 @@
+.contact {
+  $this: &;
+  display: flex;
+  align-items: center;
+
+  &.small {
+    #{$this}__separator {
+      height: 16px;
+    }
+    #{$this}__sublink {
+      @include fontSize(14, 16);
+      font-weight: 400;
+    }
+  }
+
+
+  &__separator {
+    width: 1px;
+    height: 20px;
+    margin: 0 8px;
+    background-color: $grey-30;
+  }
+
+  &__sublink {
+    @include fontSize(18, 24);
+    font-weight: 500;
+
+    &.grey {
+      color: $grey-50;
+      font-weight: 400;
+    }
+  }
+}
