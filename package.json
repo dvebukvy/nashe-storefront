@@ -16,7 +16,7 @@
     "normalize.css": "^8.0.1",
     "nuxt": "^2.15.7",
     "nuxt-compress": "^4.1.0",
-    "swiper": "^6.7.5",
+    "swiper": "^8.0.7",
     "v-show-slide": "^1.8.3",
     "vue": "^2.6.14"
   },

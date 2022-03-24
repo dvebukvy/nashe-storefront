@@ -1,6 +1,11 @@
 .footer {
   $this: &;
   background-color: $grey-10;
+  margin-top: 128px;
+
+  @media (max-width: $s) {
+    margin-top: 96px;
+  }
 
   &__container {
     display: flex;
@@ -99,6 +104,11 @@
     @media (max-width: $s) {
       margin-top: 32px;
     }
+    @media (max-width: $xs) {
+      flex-direction: column;
+      gap: 16px;
+      padding: 24px 0;
+    }
   }
 
   &__info {
@@ -106,6 +116,13 @@
     justify-content: space-between;
     align-items: center;
     padding: 16px 0;
+
+    @media (max-width: $xs) {
+      flex-direction: column;
+      justify-content: center; 
+      gap: 24px;    
+      padding: 24px 0; 
+    }
   }
 
   &__row {
@@ -118,6 +135,15 @@
         flex-direction: column;
         gap: 10px;
       }
+      @media (max-width: $xs) {
+        align-items: center;
+      }
+    }
+
+    @media (max-width: $xs) {
+      // align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
     }
 
     
@@ -133,6 +159,10 @@
       @media (max-width: $s) {
         display: none;
       }
+    }
+
+    @media (max-width: $xs) {
+      display: none;
     }
   }
 

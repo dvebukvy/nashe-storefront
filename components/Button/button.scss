@@ -5,6 +5,7 @@
   min-width: 40px;  
 
   // padding: 10px 12px;
+  padding: 0 12px;
   background-color: $brand-primary;
   border-radius: 8px;
   display: flex;
@@ -110,7 +111,15 @@
 
   &.icon-only {
     width: 40px;  
-    height: 40px;  
+    height: 40px; 
+    padding: 0; 
+  }
+
+  &.small {
+    height: 32px;
+    #{$this}__span {
+      @include fontSize(13, 16);
+    }
   }
 
   

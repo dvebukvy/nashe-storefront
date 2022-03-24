@@ -1,0 +1,12 @@
+.favorite-button {
+  cursor: pointer;
+  &__icon {
+    width: 24px;
+    height: 24px;
+    fill: rgba(0, 0, 0, 0.12);
+
+    &.active {
+      fill: $brand-primary;
+    }
+  }
+}

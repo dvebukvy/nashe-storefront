@@ -69,7 +69,6 @@ export default {
     categoriesArray() {
       let array = []
       let catArr = this.data.categories
-      // console.log(1);
       catArr.forEach(element => {
         let length = element.list.other.length
         let del = Math.round(length / 8)
@@ -79,7 +78,6 @@ export default {
       }
         array.push(arr)
       });
-      console.log(array);
       return array
     },
   },

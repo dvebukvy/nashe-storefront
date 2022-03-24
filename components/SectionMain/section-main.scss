@@ -1,0 +1,25 @@
+.section-main {
+  padding-top: 96px;
+
+  @media (max-width: $s) {
+    padding-top: 64px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__title {
+    color: $brand-secondary;
+    @include fontSize(28, 36);
+    font-weight: 500;
+  }
+
+  &__body {
+    padding-top: 24px;
+  }
+
+  
+}
