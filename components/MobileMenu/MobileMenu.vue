@@ -107,7 +107,7 @@ export default {
     return {
       activeIndex: 0,
       activeSecondIndex: 0,
-      level: 1,
+      level: 0,
     }
   },
   methods: {
@@ -127,10 +127,16 @@ export default {
     },
     close() {
       this.$nuxt.$emit('closeMenu')
-      this.level = 1
+      this.level = 0
       this.activeIndex = 0
       this.activeSecondIndex = 0
     },
+    showFirst() {
+      this.level = 1
+    }
+  },
+  mounted() {
+    this.$nuxt.$on('showFirst', this.showFirst)
   },
 }
 </script>

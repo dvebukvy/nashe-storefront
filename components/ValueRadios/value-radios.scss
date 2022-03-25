@@ -1,0 +1,70 @@
+.value-radios {
+  $this: &;
+  display: flex;
+  gap: 8px;
+  position: relative;
+
+  &__item {
+    position: relative;
+    padding: 12px 15px;
+    min-width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // border: 1px solid $grey-20;
+    border-radius: 8px;
+    color: rgb(228, 99, 0);
+    z-index: 2;
+    overflow: hidden;    
+
+    &.disabled {     
+      #{$this}__value {
+        color: $grey-50;
+      }
+    }
+  }
+
+  &__box {
+    &.disabled {
+      background-image: url('~/static/img/line_1.svg');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &__value {
+    color: $brand-secondary;
+    @include fontSize(14, 16);
+    font-weight: 400;
+    background-color: white;
+    z-index: 4;
+  }
+
+  &__input {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 12;
+    transition: border 0.3s ease;
+    border: 1px solid $grey-20;
+    border-radius: 8px;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+
+    &:checked {
+      border: 1px solid $brand-primary;
+    }
+  }
+}

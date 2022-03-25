@@ -1,5 +1,5 @@
 <template lang="pug">
-.product-card
+nuxt-link.product-card(to='/product/slug')
   .product-card__images
     .product-card__sections(
       :style='"grid-template-columns: repeat(" + data.images.length + ", minmax(0, 1fr))"'

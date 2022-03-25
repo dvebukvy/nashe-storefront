@@ -8,7 +8,7 @@
 
         .footer__send-section
           Input(type='text', placeholder='dsadsad')
-          Button(icon='arrow-right-20')
+          Button(icon='arrow-right-20' class='medium')
         .footer__small-text Подписываясь на рассылку, вы соглашаетесь с условиями <a class='footer__small-text link' href='#'>Политики конфиденциальности</a>
       .footer__links-section
         .footer__list

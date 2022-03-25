@@ -4,6 +4,17 @@
   gap: 24px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
 
+  @media (max-width: $s) {
+    display: flex;
+    width: 100%;
+    gap: 16px;
+    flex-wrap: nowrap;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
   &__card {
     display: flex;
     flex-direction: column;
@@ -15,6 +26,13 @@
         transform: scale(1.1);
       }
     }
+    @media (max-width: $s) {
+      &:hover {        
+        #{$this}__image {
+          transform: scale(1);
+        }
+      }
+    }
   }
 
   &__cover {
@@ -22,11 +40,17 @@
     border-radius: 8px;
     width: 100%;
     aspect-ratio: 2 / 1;
+
+    @media (max-width: $s) {
+      width: 344px;
+    }
+    @media (max-width: $xs) {
+      width: 272px;
+    }
   }
 
   &__image {
-    width: 100%;
-    
+    width: 100%;    
     transition: transform 0.5s ease;
   }
 

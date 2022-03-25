@@ -57,7 +57,8 @@
   }
 
   &.outline {
-    background-color: unset;
+    // background-color: unset;
+    background-color: $white;
     border: 1px solid $grey-20;
     #{$this}__hotkey {
       color: rgba(207, 100, 63, 0.64);;
@@ -110,8 +111,8 @@
   }
 
   &.icon-only {
-    width: 40px;  
-    height: 40px; 
+    width: 48px;  
+    height: 48px; 
     padding: 0; 
   }
 
@@ -120,6 +121,12 @@
     #{$this}__span {
       @include fontSize(13, 16);
     }
+  }
+
+  &.medium {
+    width: 40px;
+    height: 40px;
+    
   }
 
   

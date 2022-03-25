@@ -33,7 +33,7 @@
               svg-icon.header__action-icon(name='cart-24')
   .header__mobile
     .header__mobile-menu(:class='{active: menuVisible}')
-      MobileMenu(:data='navMenu')
+      MobileMenu(:data='navMenu' :class='{active: menuVisible}')
     .header__block
       .header__action-button(@click='openMenu')
         svg-icon.header__action-icon(name='list-24')
@@ -613,6 +613,7 @@ export default {
   methods: {
     openMenu() {
       this.menuVisible = !this.menuVisible
+      this.$nuxt.$emit('showFirst')
     }
   },
   mounted() {

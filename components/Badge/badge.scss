@@ -1,4 +1,5 @@
 .badge {
+  $this: &;
   background-color: rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   padding: 4px 8px;
@@ -6,6 +7,24 @@
 
   &.sale {
     background-color: rgba(214, 7, 0, 0.12);
+  }
+
+  &.primary-color {
+    background-color: $brand-primary-12;
+    #{$this}__label {
+      color: $brand-primary;
+      @include fontSize(14, 16);
+      font-weight: 500;
+    }
+  }
+
+  &.status-red {
+    background-color: $status-red;
+    #{$this}__label {
+      color: $white;
+      @include fontSize(14, 16);
+      font-weight: 500;
+    }
   }
 
   &__label {

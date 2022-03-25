@@ -1,0 +1,25 @@
+.breadcrumbs {
+  $this: &; 
+  padding-top: 24px;
+
+  &__list {
+    display: flex;
+    align-items: center;    
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    flex-shrink: 0;    
+  }
+
+  &__link {
+    @include fontSize(14, 16);
+    font-weight: 400;
+    color: $brand-secondary;
+    margin-right: 4px;
+
+    &.unactive {
+      color: $grey-50;
+    }
+  }
+}

@@ -1,5 +1,7 @@
 .header {
   $this: &;
+  position: relative;
+  z-index: 1;
   &__descktop {
     display: flex;
     flex-direction: column;

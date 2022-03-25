@@ -1,7 +1,7 @@
 <template lang="pug">
-  nuxt-link.button.link(:to='link' v-if="link" ) 
+  nuxt-link.button.link(:to='link' v-if="link") 
     span.button__span(v-if="label") {{label}}
-  button.button(v-else :class='{"icon-only": !label}' :disabled='disabled')    
+  button.button(v-else :class='{"icon-only": !label}' :disabled='disabled' :style='"width: " + width')    
     span.button__span(v-if="label") {{label}}
     svg-icon.button__icon(v-if="icon" :name='icon')
     span.button__hotkey(v-if="hotkey") {{hotkey}}
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  props: ['label', 'icon', 'hotkey', 'disabled', 'link']
+  props: ['label', 'icon', 'hotkey', 'disabled', 'link', 'width']
 }
 </script>
 
