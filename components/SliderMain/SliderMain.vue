@@ -17,6 +17,31 @@
           h2.slider-main__title Мужчины
           p.slider-main__text Товары со скидками до 70%
         img.slider-main__image(src='/img/main-slider-2.jpg')
+      .slider-main__slide
+        .slider-main__text-container
+          h2.slider-main__title Мужчины
+          p.slider-main__text Товары со скидками до 70%
+        img.slider-main__image(src='/img/main-slider-2.jpg')
+      .slider-main__slide
+        .slider-main__text-container
+          h2.slider-main__title Мужчины
+          p.slider-main__text Товары со скидками до 70%
+        img.slider-main__image(src='/img/main-slider-2.jpg')
+      .slider-main__slide
+        .slider-main__text-container
+          h2.slider-main__title Мужчины
+          p.slider-main__text Товары со скидками до 70%
+        img.slider-main__image(src='/img/main-slider-2.jpg')
+      .slider-main__slide
+        .slider-main__text-container
+          h2.slider-main__title Мужчины
+          p.slider-main__text Товары со скидками до 70%
+        img.slider-main__image(src='/img/main-slider-2.jpg')
+      .slider-main__slide
+        .slider-main__text-container
+          h2.slider-main__title Мужчины
+          p.slider-main__text Товары со скидками до 70%
+        img.slider-main__image(src='/img/main-slider-2.jpg')
 
     .slider-main__controls
       button.slider-main__prev(
@@ -31,7 +56,7 @@
         ref='next'
       )
         svg-icon.slider-main__icon(name='arrow-slide-r-20')
-    .slider-main__pagination(ref='pagination')
+  .slider-main__pagination(ref='pagination')
       
 </template>
 
@@ -45,6 +70,7 @@ export default {
         wrapperClass: 'slider-main__wrapper',
         slideClass: 'slider-main__slide',
         slidesPerView: 1,
+        loop:true,
 
         navigation: {
           nextEl: this.$refs.next,
@@ -53,6 +79,8 @@ export default {
         pagination: {
           el: this.$refs.pagination,
           type: 'bullets',
+          dynamicBullets: true,
+          dynamicMainBullets: 5
         },       
       })
     },

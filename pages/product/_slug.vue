@@ -1,7 +1,7 @@
 <template lang="pug">
 .page__content
   .container
-    Breadcrumbs(:data='breadcrumbs')
+    Breadcrumbs(:data='breadcrumbs', code='23КЛ-2401–201')
     ProductPage(:data='product')
 </template>
 
@@ -22,6 +22,10 @@ export default {
           '/img/product-image-2.jpg',
           '/img/product-image-3.jpg',
           '/img/product-image-4.jpg',
+          '/img/product-image-3.jpg',
+          '/img/product-image-4.jpg',
+          '/img/product-image-1.jpg',
+          '/img/product-image-2.jpg',
         ],
         colors: [
           {

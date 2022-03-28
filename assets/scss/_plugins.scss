@@ -1,15 +1,28 @@
 .vm--container {
   display: flex;
   align-items: center;
+ 
+
+  @media (max-width: $s) {
+    bottom: 0 !important;
+    // top: auto !important;
+  }
 }
 
-.vm--modal {
-  border-radius: 16px !important;
-  height: fit-content !important;
-  top: 0 !important;
+.vm--modal {  
+  border-radius: 12px !important;
+  height: fit-content !important;  
+  box-shadow: 0px 4px 16px 4px rgba(36, 16, 15, 0.08);
+  
+  
 
-  @media (max-width: 1023px) {
-    left: 16px !important;
-    width: calc(100vw - 32px) !important;
+  @media (max-width: $s) {
+    border-radius: 12px 12px 0px 0px !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    margin-bottom: 240px;
+    width: 100vw !important ;
   }
+
+  
 }

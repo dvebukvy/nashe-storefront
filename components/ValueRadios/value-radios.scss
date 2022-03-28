@@ -1,6 +1,7 @@
 .value-radios {
   $this: &;
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   position: relative;
 

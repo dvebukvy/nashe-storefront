@@ -1,6 +1,12 @@
 <template lang='pug'>
 .product-page
   ProductImages(:data='data.images')
+  .product-page__mobile-cart
+    .product-page__button-add
+      Counter(v-model="form.quantity" :data='form.quantity' v-if="form.quantity > 0")
+      Button(label='Добавить в корзину' @click.native='addToCart' v-else)
+    Button(icon='favorite-20' class='outline' @click.native='addFavoite' v-if="!form.inFavorites")
+    Button(icon='favorite-fill-20' class='outline' @click.native='removeFavoite' v-if="form.inFavorites")
   .product-page__data
     .product-page__badges(v-if="data.badges || data.sale")
       Badge(:label='item', v-for='item in data.badges', :key='item.id' v-if="data.badges" class='primary-color')
@@ -49,17 +55,61 @@
             li.product-page__list-item Не отбеливать.
       Accordion(title='Обмеры изделия')
         .product-page__accordion-content
-          p.product-page__text 92% Хлопок, 8% Эластан.
-          ul.product-page__list
-            li.product-page__list-item Стирать при температуре 40°C.
-            li.product-page__list-item Гладить при температуре утюга до 110°C.
-            li.product-page__list-item Не отбеливать.
+          .product-page__table
+            table
+              thead
+                tr
+                  th INT
+                  th Длина изделия
+                  th Обхват груди
+                  th Длина рукава
+              tbody
+                tr                          
+                  td XS
+                  td 60
+                  td 80
+                  td 54
+                tr
+                  td S
+                  td 60
+                  td 84
+                  td 54
+                tr
+                  td M
+                  td 60
+                  td 84
+                  td 54
+                tr
+                  td L
+                  td 60
+                  td 84
+                  td 54
+                tr
+                  td XL
+                  td 63
+                  td 96
+                  td 56
+          p.product-page__text.grey Все размеры указаны в сантиметрах
       Accordion(title='Доставка и возврат')
         .product-page__accordion-content
-          h2 esadwqe
+          .product-page__section
+            p.product-page__subtitle Доставка
+            .product-page__box
+              svg-icon.product-page__icon(name='truck')
+              p.product-page__text Курьером по всей России от 350 ₽
+            .product-page__box
+              svg-icon.product-page__icon(name='package')
+              p.product-page__text Почтой России от 240 ₽
+            .product-page__box
+              svg-icon.product-page__icon(name='shirt')
+              p.product-page__text В магазин или пункт выдачи от 200 ₽
+            nuxt-link.product-page__link(to='/') Условия бесплатной доставки
       Accordion(title='Наличие в магазинах')
         .product-page__accordion-content
-          h2 esadwqe
+          .product-page__box
+            svg-icon.product-page__icon(name='refresh')
+            p.product-page__text Бесплатный и удобный возврат товаров
+          nuxt-link.product-page__link(to='/') Условия возврата
 </template>
 
 
@@ -93,7 +143,7 @@ export default {
       this.$modal.show(
         ModalSizes,
         {},
-        { width: '480', scrollable: true, adaptive: true }
+        { width: '480', scrollable: true, adaptive: true, transition: 'bottom' }
       )
     },
   },

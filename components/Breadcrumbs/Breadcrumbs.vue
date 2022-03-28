@@ -4,15 +4,20 @@
     li.breadcrumbs__item
       nuxt-link.breadcrumbs__link(:to='"/"') Главная / 
     li.breadcrumbs__item(v-for='(item, index) in data', :key='index')
-      nuxt-link.breadcrumbs__link(v-if='item.url', :to='item.url') {{ item.title }} / 
+      svg-icon.breadcrumbs__icon(name='chevron-left-16')
+      nuxt-link.breadcrumbs__link(v-if='item.url', :to='item.url') {{ item.title }}
+        label.breadcrumbs__link.dash  /
       span.breadcrumbs__link.unactive(v-else) {{ item.title }}
+  .breadcrumbs__subtext(v-if="code")
+    .breadcrumbs__text Артикул:
+    .breadcrumbs__text {{code}}
 </template>
 
 
 
 <script>
 export default {
-  props: ['data'],
+  props: ['data', 'code'],
 }
 </script>
 

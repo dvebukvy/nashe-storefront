@@ -38,22 +38,22 @@
             nuxt-link.footer__subitem(to='/') Носки и колготки
         Accordion(title='Компания')
           .footer__accordion-list
-            nuxt-link.footer__text(to='/') О компании
-            nuxt-link.footer__text(to='/') Магазины
-            nuxt-link.footer__text(to='/') Контакты
-            nuxt-link.footer__text(to='/') Партнёрам
+            nuxt-link.footer__subitem(to='/') О компании
+            nuxt-link.footer__subitem(to='/') Магазины
+            nuxt-link.footer__subitem(to='/') Контакты
+            nuxt-link.footer__subitem(to='/') Партнёрам
         Accordion(title='Покупателям')
           .footer__accordion-list
-            nuxt-link.footer__text(to='/') О компании
-            nuxt-link.footer__text(to='/') Магазины
-            nuxt-link.footer__text(to='/') Контакты
-            nuxt-link.footer__text(to='/') Партнёрам
+            nuxt-link.footer__subitem(to='/') О компании
+            nuxt-link.footer__subitem(to='/') Магазины
+            nuxt-link.footer__subitem(to='/') Контакты
+            nuxt-link.footer__subitem(to='/') Партнёрам
         Accordion(title='Покупателям')
           .footer__accordion-list
-            nuxt-link.footer__text(to='/') Доставка и оплата
-            nuxt-link.footer__text(to='/') Обмен и возврат
-            nuxt-link.footer__text(to='/') Таблицы размеров
-            nuxt-link.footer__text(to='/') Система скидок
+            nuxt-link.footer__subitem(to='/') Доставка и оплата
+            nuxt-link.footer__subitem(to='/') Обмен и возврат
+            nuxt-link.footer__subitem(to='/') Таблицы размеров
+            nuxt-link.footer__subitem(to='/') Система скидок
     .footer__contacts
       Contact
       Socials

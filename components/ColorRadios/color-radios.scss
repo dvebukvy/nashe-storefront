@@ -1,6 +1,7 @@
 .color-radios {
   display: flex;
   gap: 8px;
+  flex-wrap: wrap;
 
   &__item {
     width: 40px;

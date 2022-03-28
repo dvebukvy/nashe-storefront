@@ -205,40 +205,57 @@ table {
   }
 }
 
-.page {
-  // $this: &;
-  // overflow: hidden;
-  // display: flex;
-  // flex-direction: column;
-  // max-width: 1920px;
-  // min-width: $minwidth;
-  // min-height: 100vh;
-  // margin: auto;
-  // position: relative;
-  // z-index: $layer-1;
-  // background-color: $white;
-  
 
-  // &__header {
-  //   flex-shrink: 0;
-  // } 
-
-  // &__content {
-  //   position: relative;
-  //   z-index: 2;   
-  // }
-
-  // &__content,
-  // &__body,
-  // &__footer {
-  //   flex-grow: 1;
-  // }
-
-  // &__footer {
-  //   flex-grow: 0;
-  //   flex-shrink: 0;
-  // }  
+table {
+  background-color: $white;
+  display: table;
+  border-collapse: separate;
+  box-sizing: border-box;
+  text-indent: initial;
+  width: 100%;
+  table-layout: fixed;
 }
 
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+  z-index: 1;
+}
+
+tbody {
+  position: relative;
+  z-index: 10;
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+  background-color: $white;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    z-index: 10;
+  }
+}
+
+th,
+td {
+  
+  @include fontSize(12, 16);
+  font-weight: 400;
+  color: $brand-secondary;
+  padding: 8px 8px 7px;
+  text-align: center;
+  border-bottom: 1px solid $grey-20;
+}
+
+td {
+  width: 100%;
+}
+
+th {
+  padding: 16px 8px;
+  background-color: $grey-10;
+  font-weight: 500;
+}
 
 

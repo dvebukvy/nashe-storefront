@@ -1,15 +1,30 @@
 .breadcrumbs {
-  $this: &; 
-  padding-top: 24px;
+  $this: &;
+  padding: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @media (max-width: $s) {
+    padding: 16px 0;
+  }
 
   &__list {
     display: flex;
-    align-items: center;    
+    align-items: center;
     flex-wrap: wrap;
   }
 
   &__item {
-    flex-shrink: 0;    
+    flex-shrink: 0;
+    @media (max-width: $s) {
+      display: none;
+
+      &:nth-last-child(2) {
+        display: flex;
+        align-items: center;
+        padding: 4px 0;
+      }
+    }
   }
 
   &__link {
@@ -18,8 +33,45 @@
     color: $brand-secondary;
     margin-right: 4px;
 
+    @media (max-width: $s) {
+      @include fontSize(13, 16);
+      
+    }
+
+    &.dash {
+      @media (max-width: $s) {
+        display: none;
+      }
+    }
+
     &.unactive {
       color: $grey-50;
+    }
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    fill: $brand-secondary;
+  }
+
+  &__subtext {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &__text {
+    @include fontSize(14, 16);
+    font-weight: 400;
+    color: $grey-50;
+
+    @media (max-width: $s) {
+      @include fontSize(13, 16);
+      &:nth-child(1) {
+        display: none;
+      }
     }
   }
 }
