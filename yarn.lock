@@ -6823,6 +6823,13 @@ nuxt-compress@^4.1.0:
     brotli-webpack-plugin "^1.1.0"
     compression-webpack-plugin "^6.1.1"
 
+nuxt-vue-select@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/nuxt-vue-select/-/nuxt-vue-select-0.1.4.tgz#773ad2ef78902b440f9b5766d9cc73f103f083b2"
+  integrity sha512-8njkU9XZV2it9IjZHFwLj2mChsxFhiAJ6MFj3ZU8wBffirylZXcZmzOuO/hBduz8jf1os8Q5A7x94QmoPK4A8A==
+  dependencies:
+    vue-select "^3.2.0"
+
 nuxt@^2.15.7:
   version "2.15.8"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-2.15.8.tgz#946cba46bdaaf0e3918aa27fd9ea0fed8ed303b0"
@@ -10403,6 +10410,11 @@ vue-router@^3.5.1:
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.5.2.tgz#5f55e3f251970e36c3e8d88a7cd2d67a350ade5c"
   integrity sha512-807gn82hTnjCYGrnF3eNmIw/dk7/GE4B5h69BlyCK9KHASwSloD1Sjcn06zg9fVG4fYH2DrsNBZkpLtb25WtaQ==
 
+vue-select@^3.2.0:
+  version "3.18.3"
+  resolved "https://registry.yarnpkg.com/vue-select/-/vue-select-3.18.3.tgz#31f188d7181a4a86d07b937303c457efe863c4bc"
+  integrity sha512-nKmwxEDO4RRoZ6lWkkVE2bpgne7IJSRzSh1pIawLI7dJLZbtJuSgA0xGaLrT0pUp+JYHBDul242PwOBDHi28vg==
+
 vue-server-renderer@^2.6.12:
   version "2.6.14"
   resolved "https://registry.yarnpkg.com/vue-server-renderer/-/vue-server-renderer-2.6.14.tgz#c8bffff152df6b47b858818ef8d524d2fc351654"
@@ -10442,6 +10454,11 @@ vue@^2.6.12, vue@^2.6.14:
   version "2.6.14"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.14.tgz#e51aa5250250d569a3fbad3a8a5a687d6036e235"
   integrity sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ==
+
+vuejs-paginate@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/vuejs-paginate/-/vuejs-paginate-2.1.0.tgz#93e1ad1539b713a688c7a2d3080bda60fcc6c77d"
+  integrity sha512-gnwyXlmCiDOu9MLWxN5UJ4PGijKGNOMpHG8ujsrynCzTJljn/rp7Jq0WiDGDAMi5/u0AHuYIHhced+tUW4jblA==
 
 vuex@^3.6.2:
   version "3.6.2"

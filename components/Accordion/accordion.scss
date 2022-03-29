@@ -1,7 +1,15 @@
 .accordion {
+  $this: &;
   border-top: 1px solid $grey-20;
   border-bottom: 1px solid $grey-20;
   width: 100%;
+  
+  &.padding {
+    #{$this}__content {
+      margin-top: 8px;
+    margin-bottom: 24px;
+    }
+  }
 
   & + & {
     border-top: unset;
@@ -37,8 +45,8 @@
   }
 
   &__body {
-    &.active {
-      // padding-bottom: 48px;
-    }
+        
   }
+
+  
 }

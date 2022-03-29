@@ -1,0 +1,11 @@
+.headline {
+  display: flex;
+  align-items: center;
+  padding-bottom: 24px;
+
+  &__title {
+    color: $brand-secondary;
+    @include fontSize(32, 40);
+    font-weight: 500;
+  }
+}

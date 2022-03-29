@@ -1,0 +1,47 @@
+.range {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+
+  &__container {
+    position: relative;
+  }
+
+  &__text {
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    color: $brand-secondary;
+    @include fontSize(14, 20);
+    font-weight: 400;
+  }
+
+  &__input {
+    width: 136px;
+    border: 1px solid $grey-10;
+    background-color: $grey-10;
+    padding: 9px 11px 9px 38px;
+    color: $brand-secondary;
+    @include fontSize(14, 20);
+    font-weight: 400;
+    border-radius: 8px;
+    outline: none;
+    transition: border 0.3s ease;
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+    overflow: hidden; 
+
+    &::placeholder {
+      color: $grey-50;
+    }
+
+    &:hover {
+      border: 1px solid $grey-20;
+    }
+    &:focus {
+      border: 1px solid $brand-primary;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 <template lang="pug">
 .color-radios(ref='label')
-  .color-radios__item(v-for='color in data', :key='color.id')
+  .color-radios__item(v-for='color in data', :key='color.id' :title='color.name')
     input.color-radios__input(
       type='radio',
       :checked='active',
@@ -11,7 +11,7 @@
       :style='"background-color: " + color.hex',
       v-if='color.hex'
     )
-    img.color-radios__image(v-if='color.image', :src='color.image') 
+    img.color-radios__texture(v-if='color.texture', :src='color.texture') 
 </template>
 
 <script>

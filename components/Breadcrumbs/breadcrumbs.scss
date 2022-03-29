@@ -54,6 +54,10 @@
     height: 16px;
     margin-right: 4px;
     fill: $brand-secondary;
+    display: none;
+    @media (max-width: $s) {
+      display: block;
+    }
   }
 
   &__subtext {
@@ -63,9 +67,10 @@
   }
 
   &__text {
+    color: $grey-50;
     @include fontSize(14, 16);
     font-weight: 400;
-    color: $grey-50;
+    
 
     @media (max-width: $s) {
       @include fontSize(13, 16);

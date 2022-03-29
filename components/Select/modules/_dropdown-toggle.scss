@@ -1,0 +1,73 @@
+/**
+    Dropdown Toggle
+
+    The dropdown toggle is the primary wrapper of the component. It
+    has two direct descendants: .vs__selected-options, and .vs__actions.
+
+    .vs__selected-options holds the .vs__selected's as well as the
+    main search input.
+
+    .vs__actions holds the clear button and dropdown toggle.
+ */
+
+/* Селектор */
+.vs__dropdown-toggle {
+  height: 40px;
+  display: flex;
+  border: 1px solid $grey-10;
+  border-radius: 8px;
+  padding: 9px 11px;
+  background: $grey-10;
+  transition: border 0.3s ease;
+}
+
+/* Что находится в инпуте */
+.vs__selected-options {
+  display: flex;
+  flex-basis: 100%;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  position: relative;
+}
+
+/* кнопки действий справа от инпута */
+.vs__actions {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml;utf8,<svg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'><path  d='M5.00011 6.43933L5.53044 6.96966L10.0001 11.4393L14.4698 6.96966L15.0001 6.43933L16.0608 7.49999L15.5304 8.03032L10.5304 13.0303L10.0001 13.5607L9.46978 13.0303L4.46978 8.03032L3.93945 7.49999L5.00011 6.43933Z' fill='rgb(102, 46, 44)'/></svg>");
+  }
+}
+
+/* Dropdown Toggle States */
+.vs--searchable .vs__dropdown-toggle {
+  cursor: text;
+}
+.vs--unsearchable .vs__dropdown-toggle {
+  cursor: pointer;
+}
+
+.vs--open .vs__dropdown-toggle {
+  .vs__actions {
+    &::after {
+      background-image: url("data:image/svg+xml;utf8,<svg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'><path  d='M9.99987 6.43945L10.5302 6.96978L15.5302 11.9698L16.0605 12.5001L14.9999 13.5608L14.4695 13.0304L9.99987 8.56077L5.5302 13.0304L4.99987 13.5608L3.93921 12.5001L4.46954 11.9698L9.46954 6.96978L9.99987 6.43945Z' fill='rgb(102, 46, 44)'/></svg>");
+    }
+  }
+}
+
+/* Нижняя часть селекта, когда он открыт */
+.vs--open .vs__dropdown-toggle {
+  border-bottom-color: transparent;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border: 1px solid $brand-primary !important;
+}

@@ -39,6 +39,6 @@ export default {
 
   components: true,
 
-  modules: ['@nuxtjs/axios', '@nuxtjs/style-resources', '@nuxtjs/svg-sprite'],
+  modules: ['@nuxtjs/axios', '@nuxtjs/style-resources', '@nuxtjs/svg-sprite', 'nuxt-vue-select'],
     
 }

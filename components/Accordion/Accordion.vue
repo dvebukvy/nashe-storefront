@@ -5,7 +5,8 @@
       svg-icon.accordion__icon-shevron(name='plus-20' :class='{"active": !dropdownOpened}')    
       svg-icon.accordion__icon-shevron(name='minus-20' :class='{"active": dropdownOpened}')    
     .accordion__body(v-show-slide:500:example-easing="dropdownOpened", :class='{"active": dropdownOpened}')
-      slot
+      .accordion__content
+        slot
 </template>
 
 <script>

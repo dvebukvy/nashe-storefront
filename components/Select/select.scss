@@ -1,0 +1,188 @@
+@import "global/variables";
+@import "global/component";
+@import "global/animations";
+@import "global/states";
+
+@import "modules/dropdown-toggle";
+@import "modules/open-indicator";
+@import "modules/clear";
+@import "modules/dropdown-menu";
+@import "modules/dropdown-option";
+@import "modules/selected";
+@import "modules/search-input";
+@import "modules/spinner";
+
+.select {
+  width: 100%;
+  position: relative;
+
+  &.dropup {
+    & .vs__dropdown-menu {
+      top: unset;
+      bottom: 44px;
+    }
+  }
+
+  &.unsearch {    
+    & .vs__search {
+      display: none !important;
+    }
+  }
+  &__icon-dropdown {
+    fill: $grey-100;
+  }
+
+  &__action {
+    padding: 10px 12px;
+    display: flex;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $grey-10;
+    }    
+  }
+
+  &__multiple-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: $white;
+    gap: 16px;
+    z-index: 2;    
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__color {    
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 12px;
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1px solid $grey-20;
+      position: absolute;
+      top: -2px;
+      left: -2px;
+    }
+  }
+
+  &__icon-add {
+    fill: $brand-primary;
+    margin-right: 12px;
+  }
+
+  &__action-text {
+    @include fontSize(14, 20);
+    color: $grey-100;
+    font-weight: 400;
+
+    &.blue {
+      color: $brand-primary;
+      margin-right: 8px;
+    }
+  }
+
+  &__help {
+    padding-top: 8px;
+    color: $grey-50;
+    @include fontSize(12, 16);
+    font-weight: 400;
+    max-width: 400px;
+  }
+}
+
+.v-select {  
+  &:hover {
+    & .vs__dropdown-toggle {
+      border: 1px solid $grey-30;
+    }
+  }
+  &.with-color {
+    .vs__selected {   
+      padding-left: 29px;
+      position: relative;
+      &::before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        position: absolute;
+        background-color: var(--color);
+        left: 0;
+        top: 0;
+      }
+      
+
+    &::after {
+      content: '';
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1px solid $grey-20;
+      position: absolute;
+      top: -2px;
+      left: -2px;
+    }
+    }
+  }
+
+  &.unsearch {
+    & .v-select {
+      background-color: red;
+    }
+    & .vs__search {
+      display: none !important;
+    }
+  }
+  &.small {
+    .icon {
+      width: 16px !important;
+      height: 16px !important;
+    }
+    .vs__clear {
+      display: none;
+    }
+    .vs__dropdown-toggle {   
+      padding: 7px 11px;
+      width: 72px;
+
+      max-height: 32px;
+      min-height: 32px
+    }
+    .vs__selected {
+      @include fontSize(13, 16);  
+      height: unset;
+      padding-right: 0;   
+    }
+    .vs__search {
+      @include fontSize(13, 16);      
+    }
+    .vs__dropdown-option {
+      padding: 8px 12px;
+      @include fontSize(13, 16);
+    }
+    .vs__dropdown-menu {
+      width: 72px;
+    }
+    .vs__dropdown-option--selected { 
+      &::after {
+        content: '';
+        position: absolute;    
+        width: 16px;
+        height: 16px;    
+        right: 12px;
+        top: 8px;
+        background-image: url("data:image/svg+xml;utf8,<svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M8 1C4.1 1 1 4.1 1 8C1 11.9 4.1 15 8 15C11.9 15 15 11.9 15 8C15 4.1 11.9 1 8 1ZM7 11L4.3 8.3L5.2 7.5L7 9.3L11 5.4L11.9 6.2L7 11Z' fill='rgb(0, 67, 206)'/></svg>")
+      }
+    }
+  }
+}

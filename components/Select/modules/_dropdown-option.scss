@@ -1,0 +1,55 @@
+/* Элемент выпадающего списка */
+.vs__dropdown-option {  
+  display: block;
+  padding: 10px 12px;
+  clear: both;  
+  white-space: unset;
+  cursor: pointer;
+  @include fontSize(14, 20);
+  color: $grey-100;
+  font-weight: 400;
+}
+
+/* При наведении на элемент */
+.vs__dropdown-option--highlight {
+  background: $grey-10;
+  color: $grey-100;
+
+  .select__multiple-item {
+    background-color: $grey-10;
+  }
+}
+
+/* Выбранный элемент */
+.vs__dropdown-option--selected {  
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;    
+    width: 8px;
+    height: 8px;    
+    right: 18px;
+    top: 16px;
+    background-color: $brand-primary;
+    border-radius: 100%;
+  }
+
+  .select__multiple-item {
+    .checkbox {
+      &__box {
+        background-color: $brand-primary;
+        &::before {
+          opacity: 1;
+          background-image: url("data:image/svg+xml;utf8,<svg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M4.28571 9.5L0 5.24857L1.36286 3.92857L4.28571 6.8L10.6371 0.5L12 1.85429L4.28571 9.5Z' fill='white'/></svg>") !important;
+        }
+      }
+    }
+  }
+}
+
+/* Disabled элемент */
+.vs__dropdown-option--disabled {
+  background: inherit;
+  color: $vs-state-disabled-color;
+  cursor: inherit;
+}
