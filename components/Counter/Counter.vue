@@ -1,20 +1,24 @@
 <template lang="pug">
-  .counter
-    button.counter__button(@click='removeProduct')
-      svg-icon.counter__icon(name='minus-20' )
-    input.counter__input(type='number' v-model="quantityData" inputmode='numeric')
-    button.counter__button.plus(@click='addProduct')
-      svg-icon.counter__icon(name='plus-20')
+.counter
+  button.counter__button(@click='removeProduct')
+    svg-icon.counter__icon(name='minus-20')
+  input.counter__input(
+    type='number',
+    v-model='quantityData',
+    inputmode='numeric'
+  )
+  button.counter__button.plus(@click='addProduct')
+    svg-icon.counter__icon(name='plus-20')
 </template>
 
 <script>
 export default {
-  // props: ['data'],
+  props: ['quantity'],
   data() {
     return {
-      quantityData: 1,
+      quantityData: this.quantity || 1,
     }
-  },
+  },  
   methods: {
     addProduct() {
       this.quantityData++
@@ -35,5 +39,4 @@ export default {
 </script>
 
 <style lang="scss" src='./counter.scss'>
-  
 </style>

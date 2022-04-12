@@ -16,6 +16,17 @@
   width: 100%;
   position: relative;
 
+  &.small {
+    & .vs__dropdown-toggle {
+      padding: 8px 12px;
+      height: 32px;
+    }
+    & .vs__selected {
+      @include fontSize(13, 16);
+      height: 16px;
+    }
+  }
+
   &.dropup {
     & .vs__dropdown-menu {
       top: unset;
