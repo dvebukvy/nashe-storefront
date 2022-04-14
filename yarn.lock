@@ -10282,6 +10282,11 @@ uuid@^3.3.2:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
 
+v-mask@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/v-mask/-/v-mask-2.3.0.tgz#2329c352ce9997eb721d160cf3f0a8552c5c9e1c"
+  integrity sha512-ap7pTtCTvj25CqX4VYXqudCBd0+XvYyhiiLbzWQQR7AMQosJ2+DPu0a94P9stk0EGmGcmYxJaPkFkfjD8hquWQ==
+
 v-show-slide@^1.8.3:
   version "1.8.3"
   resolved "https://registry.yarnpkg.com/v-show-slide/-/v-show-slide-1.8.3.tgz#79a6956acef96129812af96fdb50e1558c6aebf5"
@@ -10449,6 +10454,11 @@ vue-template-es2015-compiler@^1.9.0:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
+
+vue-yandex-maps@^0.11.8:
+  version "0.11.8"
+  resolved "https://registry.yarnpkg.com/vue-yandex-maps/-/vue-yandex-maps-0.11.8.tgz#89c6024621ea4a8d64570233582d9be5c79e05b3"
+  integrity sha512-tuZcDvQtPalAvsSziUJRMVfCjcK9J2BLTIvrJfHyKh6nYQ1ww/pF+LitR+VQHLXEGYHnR0AofJWTC6tvyMYxiQ==
 
 vue@^2.6.12, vue@^2.6.14:
   version "2.6.14"

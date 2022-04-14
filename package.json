@@ -18,9 +18,11 @@
     "nuxt-compress": "^4.1.0",
     "nuxt-vue-select": "^0.1.4",
     "swiper": "^6.8.4",
+    "v-mask": "^2.3.0",
     "v-show-slide": "^1.8.3",
     "vue": "^2.6.14",
     "vue-js-modal": "^2.0.1",
+    "vue-yandex-maps": "^0.11.8",
     "vuejs-paginate": "^2.1.0",
     "vuex": "^3.6.2"
   },

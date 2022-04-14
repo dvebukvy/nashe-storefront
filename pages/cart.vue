@@ -1,7 +1,7 @@
 <template lang="pug">
 .page__content
   .container
-    Breadcrumbs(:data='breadcrumbs', code='23КЛ-2401–201')
+    Breadcrumbs(:data='breadcrumbs')
     Headline(title='Корзина')
     CartPage(:data='products', :colors='colors', :sizes='sizes')
 </template>
