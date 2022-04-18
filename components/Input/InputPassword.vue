@@ -6,8 +6,8 @@
       svg-icon(name='error')
     button.input__button-pass(v-if='type == "password"' @click='showPassword')
       svg-icon(name='view-20')
-    button.input__button-pass(v-if='pass' @click='hidePassword')
-      svg-icon(name='view-off')
+    button.input__button-pass-off(v-if='pass' @click='hidePassword')
+      svg-icon(name='view-off-20')
 </template>
 
 <script>

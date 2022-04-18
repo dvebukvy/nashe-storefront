@@ -1,25 +1,11 @@
 <template lang="pug">
 .page__content
   .container
-    Breadcrumbs(:data='breadcrumbs', code='23КЛ-2401–201')
-    Headline(title='Джемперы')
-    .category-page
-      .category-page__filters-mobile(:class='{active: filtersOpened}')
-        MobileFilter(:data='filters')      
-      .category-page__actions
-        Button(label='Категории и фильтры' class='is-filter filtered reverse' icon='filter' width='196px' @click.native='openFilters')
-        Select(
-            style='width: 196px'
-            :data='selector',
-            placeholder='Обычный селект',
-            :searchable='false',
-            :multiple='false',
-            :selectedData='selector[0]'
-          )
-      .category-page__filters
-        CategoryFilter(:data='filters')
-      .category-page__content
-        .category-page__selector          
+    Breadcrumbs(:data='breadcrumbs')
+    Headline(title='Результаты поиска по запросу «Джемпер»')
+    .search-page
+      .search-page__actions
+        .search-page__selector 
           Select(
             :data='selector',
             placeholder='Обычный селект',
@@ -27,254 +13,40 @@
             :multiple='false',
             :selectedData='selector[0]'
           )
-        .category-page__selected
-          FilteredItems
-        .category-page__list
-          ProductCard(v-for='item in products', :key='item.id', :data='item' class='in-grid')
-        Pagination
+        .search-page__mobile-selector(@click='openSelector') 
+          Select(
+            style='pointer-events:none'
+            :data='selector',
+            placeholder='Обычный селект',
+            :searchable='false',
+            :multiple='false',
+            :selectedData='selector[0]'
+          )
+        .search-page__select(:class='{ opened: selectorOpened }')
+          MobileSelect(
+            :data='selector',
+            :selectedData='selector[0]',
+            v-model='selected'
+          )
+      .search-page__fail(v-if='fail')
+        img.search-page__fail-icon(src='/icons/search-fail.svg')
+        p.search-page__text По вашему запросу ничего не найдено. <br> Попробуйте изменить запрос или воспользуйтесь каталогом товаров
+      .search-page__list(v-if='!fail')
+        ProductCard.in-grid(
+          v-for='item in products',
+          :key='item.id',
+          :data='item'
+        )
+      Pagination(v-if='!fail')
 </template>
 
 <script>
 export default {
   data() {
     return {
-      filtersOpened: false,
-      filters: {
-        categories: [
-          {
-            label: 'Джемперы',
-            value: 'Джемперы',
-          },
-          {
-            label: 'Водолазки',
-            value: 'Водолазки',
-          },
-          {
-            label: 'Рубашки и блузки',
-            value: 'Рубашки и блузки',
-          },
-          {
-            label: 'Платья',
-            value: 'Платья',
-          },
-          {
-            label: 'Футболки',
-            value: 'Футболки',
-          },
-          {
-            label: 'Брюки',
-            value: 'Брюки',
-          },
-          {
-            label: 'Test',
-            value: 'Test',
-          },
-          {
-            label: 'Test',
-            value: 'Test',
-          },
-          {
-            label: 'Test',
-            value: 'Test',
-          },
-          {
-            label: 'Test',
-            value: 'Test',
-          },
-          {
-            label: 'Test',
-            value: 'Test',
-          },
-          {
-            label: 'Test',
-            value: 'Test',
-          },
-          {
-            label: 'Test',
-            value: 'Test',
-          },
-          {
-            label: 'Test',
-            value: 'Test',
-          },
-        ],
-        colors: [
-          {
-            hex: '#000000',
-            name: 'Черный',
-          },
-          {
-            hex: '#ffffff',
-            name: 'Белый',
-          },
-          {
-            hex: '#EAE5CF',
-            name: 'Бежевый',
-          },
-          {
-            texture: '/img/texture-1.jpg',
-            name: 'Разноцветный',
-          },
-          {
-            hex: '#3736E0',
-            name: 'Синий',
-          },
-          {
-            hex: '#56BCE8',
-            name: 'Голубой',
-          },
-          {
-            hex: '#126354',
-            name: 'Зеленый',
-          },
-          {
-            hex: '#3736E0',
-            name: 'Синий',
-          },
-          {
-            hex: '#56BCE8',
-            name: 'Голубой',
-          },
-          {
-            hex: '#126354',
-            name: 'Зеленый',
-          },
-          {
-            hex: '#56BCE8',
-            name: 'Голубой',
-          },
-          {
-            hex: '#126354',
-            name: 'Зеленый',
-          },
-        ],
-        sizes: [
-          {
-            name: '42',
-            active: true,
-          },
-          {
-            name: '44',
-            disabled: true,
-          },
-          {
-            name: '46',
-          },
-          {
-            name: '48',
-          },
-          {
-            name: '5',
-            disabled: true,
-          },
-          {
-            name: '52',
-          },
-          {
-            name: '54',
-          },
-          {
-            name: '56',
-          },
-          {
-            name: '5844343',
-            disabled: true,
-          },
-          {
-            name: '60',
-          },
-        ],
-        glowSizes: [
-          {
-            name: '42',
-          },
-          {
-            name: '44',
-          },
-          {
-            name: '46',
-          },
-          {
-            name: '48',
-          },
-          {
-            name: '57',
-          },
-          {
-            name: '52',
-          },
-          {
-            name: '54',
-          },
-          {
-            name: '56',
-          },
-          {
-            name: '58',
-          },
-          {
-            name: '60',
-          },
-        ],
-        hatSizes: [
-          {
-            name: '42',
-          },
-          {
-            name: '44',
-          },
-          {
-            name: '46',
-          },
-          {
-            name: '48',
-          },
-          {
-            name: '57',
-          },
-          {
-            name: '52',
-          },
-          {
-            name: '54',
-          },
-          {
-            name: '56',
-          },
-          {
-            name: '58',
-          },
-          {
-            name: '60',
-          },
-        ],
-        collections: [
-          {
-            label: 'Весна-лето 2020',
-            value: 'Весна-лето 2020',
-          },
-          {
-            label: 'Осень-зима 2020',
-            value: 'Осень-зима 2020',
-          },
-          {
-            label: 'Весна-лето 2021',
-            value: 'Весна-лето 2021',
-          },
-          {
-            label: 'Осень-зима 2021',
-            value: 'Осень-зима 2021',
-          },
-          {
-            label: 'Весна-лето 2022',
-            value: 'Весна-лето 2022',
-          },
-          {
-            label: 'Осень-зима 2022',
-            value: 'Осень-зима 2022',
-          },
-        ],
-      },
+      fail: false,
+      selected: null,
+      selectorOpened: false,
       selector: [
         {
           value: 'lowPrice',
@@ -668,7 +440,7 @@ export default {
     breadcrumbs() {
       let breadcrumbs = [
         {
-          title: 'Женщинам',
+          title: 'Результаты поиска',
         },
       ]
 
@@ -676,103 +448,92 @@ export default {
     },
   },
   methods: {
-    openFilters() {
-      this.filtersOpened = true
+    openSelector() {
+      this.selectorOpened = true
     },
-    closeFilters() {
-      this.filtersOpened = false
-    }
+    closeSelector() {      
+      this.selectorOpened = false
+    },
+
   },
+  mounted() {
+    this.$nuxt.$on('closeMobileSelect', this.closeSelector)
+  }
 }
 </script>
 
 <style lang="scss">
-.category-page {
-  display: grid;
-  gap: 24px;
-  grid-template-columns: 3fr 9fr;
-
-  @media (max-width: $m) {
-    grid-template-columns: 4fr 8fr;
-  }
-
-  @media (max-width: $s) {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__content {
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
-    width: 100%;
-  }
-
-  &__filters-mobile {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    transition: opacity, visibility, transform;
-    transition-timing-function: ease;
-    transition-duration: 0.3s;
-
-    visibility: visible;
-
-    transform: translateY(-32px);
-    z-index: -1;
-    opacity: 0;
-    pointer-events: none;
-
-    &.active {
-      transform: translateY(0);
-      opacity: 1;
-      pointer-events: all;
-      z-index: 100;
-    }
-  }
-
-  &__filters {
-    margin-right: 24px;
-    @media (max-width: $s) {
-      display: none;
-    }
-  }
-
-  &__actions {
-    display: none;
-    @media (max-width: $s) {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-  }
-
-  &__selector {
-    width: 196px;
-    margin-bottom: 24px;
-    @media (max-width: $s) {
-      display: none;
-    }
-  }
-
-  &__selected {
-    margin-bottom: 24px;
-    @media (max-width: $s) {
-      display: none;
-    }
-  }
-
+.search-page {
   &__list {
     display: grid;
     gap: 48px 24px;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     @media (max-width: $m) {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
     @media (max-width: $xs) {
       grid-template-columns: repeat(1, minmax(0, 1fr));
     }
+  }
+
+  &__fail {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 88px;
+    gap: 16px;
+  }
+
+  &__selector {
+    width: 196px;    
+    @media (max-width: $s) {
+      display: none;
+    }
+  }
+
+  &__mobile-selector {
+    width: 196px;    
+    display: none;
+    @media (max-width: $s) {
+      display: flex;
+    }
+  }
+
+  &__select {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(24px);
+    width: 100vw;
+    height: 100vh;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    display: none;
+    &.opened {
+      z-index: 100;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+    @media (max-width: $s) {
+      display: block;
+    }
+  }
+
+  &__text {
+    color: $brand-secondary;
+    @include fontSize(16, 24);
+    font-weight: 400;
+    text-align: center;
+  }
+
+  &__actions {
+    display: flex;
+    margin-bottom: 24px;
+    justify-content: space-between;
   }
 }
 </style>

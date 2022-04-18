@@ -9,7 +9,6 @@ export default {
   props: ['value', 'text'],
   methods: {
     toggle(e) {
-      console.log(123);
       this.$emit('change', this.$refs.label)
       this.$emit('input', e.target.value)
     },
