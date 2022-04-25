@@ -5,6 +5,10 @@
   background-color: $grey-10;
   border-radius: 12px;
 
+  &.background {
+    background-color: $white
+  }
+
   &__section {
     display: flex;
     flex-direction: column;

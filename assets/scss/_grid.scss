@@ -63,6 +63,10 @@
   &__body,
   &__footer {
     flex-grow: 1;
+    &.secondary {
+      background-color: $grey-10;
+    }
+    
   }
 
   &__show-more {
@@ -78,6 +82,7 @@
   }
 
   &__content {
+    
     @media (max-width: $xs) {
       padding-top: 56px;
 
@@ -85,5 +90,28 @@
         padding-top: 0;
       }
     }
+  }
+
+  &__bredcrumb-back {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 24px 0;
+    flex-wrap: wrap;
+    @media (max-width: $s) {
+      padding: 16px 0;
+    }
+  }
+
+  &__bredcrumb-icon {
+    width: 16px;
+    height: 16px;
+    fill: $brand-secondary;
+  }
+
+  &__bredcrumb-text {
+    color: $brand-secondary;
+    @include fontSize(13, 16);
+    font-weight: 400;
   }
 }

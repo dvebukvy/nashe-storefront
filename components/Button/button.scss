@@ -49,6 +49,10 @@
     fill: $white;
   }
 
+  &.unset-width {
+    width: unset !important;
+  }
+
   &.min-width {
     min-width: 128px;
   }

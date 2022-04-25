@@ -34,8 +34,7 @@
     margin-right: 4px;
 
     @media (max-width: $s) {
-      @include fontSize(13, 16);
-      
+      @include fontSize(13, 16);      
     }
 
     &.dash {
