@@ -1,5 +1,5 @@
 <template lang="pug">
-nuxt-link.button.link(:to='link', v-if='link') 
+nuxt-link.button(:to='link', v-if='link') 
   span.button__span(v-if='label') {{ label }}
 a.button.outline(v-else-if='tel', :href='"tel:" + tel') {{ label }}
 button.button(

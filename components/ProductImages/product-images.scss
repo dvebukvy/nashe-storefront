@@ -13,21 +13,26 @@
     &.one {
       grid-template-areas: 'grid0 grid0';
     }
+
     &.two {
       grid-template-areas: 'grid0 grid1';
     }
+
     &.three {
-      grid-template-areas: 'grid0 grid0' 'grid1 grid2';
+      grid-template-areas: 'grid0 grid0''grid1 grid2';
     }
+
     &.four {
-      grid-template-areas: 'grid0 grid1' 'grid2 grid3';
+      grid-template-areas: 'grid0 grid1''grid2 grid3';
     }
+
     &.five {
       grid-template-areas:
         'grid0 grid1'
         'grid2 grid2'
         'grid3 grid4';
     }
+
     &.six {
       grid-template-areas:
         'grid0 grid0'
@@ -35,6 +40,7 @@
         'grid3 grid3'
         'grid4 grid5';
     }
+
     &.seven {
       grid-template-areas:
         'grid0 grid0'
@@ -43,6 +49,7 @@
         'grid4 grid5'
         'grid6 grid6';
     }
+
     &.eight {
       grid-template-areas:
         'grid0 grid1'
@@ -85,9 +92,11 @@
     @media (max-width: $l) {
       padding: 48px;
     }
+
     @media (max-width: $m) {
       padding: 40px;
     }
+
     @media (max-width: $s) {
       padding: 0;
     }
@@ -111,6 +120,7 @@
   &__img {
     width: 100%;
     aspect-ratio: 1/1;
+
     @media (max-width: $s) {
       object-fit: cover;
       aspect-ratio: unset;
@@ -122,9 +132,11 @@
     display: flex;
     padding-right: 48px;
     flex-shrink: 0;
+
     @media (max-width: $m) {
       padding-right: 40px;
     }
+
     @media (max-width: $s) {
       display: none;
     }
@@ -166,7 +178,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    border: 1px solid $grey-20;
+    border: 1px solid $gray-20;
     flex-shrink: 0;
     margin-left: 96px;
     background-color: $white;
@@ -181,18 +193,19 @@
       right: 24px;
       top: 24px;
     }
+
     @media (max-width: $xs) {
       right: 16px;
       top: 16px;
     }
 
     &:hover {
-      & > svg {
+      &>svg {
         fill: $brand-primary;
       }
     }
 
-    & > svg {
+    &>svg {
       width: 16px;
       height: 16px;
       fill: $brand-secondary;
@@ -225,12 +238,13 @@
       border-radius: 50%;
       transition: background-color 0.5s ease;
 
-      & + & {
+      &+& {
         margin-left: 10px;
       }
 
       &-active {
         background-color: rgba(0, 0, 0, 0.48);
+
         &::before {
           opacity: 1;
         }
@@ -246,15 +260,18 @@
       display: flex;
     }
   }
+
   &__mobile-wrapper {
     display: flex;
   }
+
   &__mobile-slide {
     flex-shrink: 0;
   }
 
   &__mobile-img {
     width: 100%;
+
     // aspect-ratio: 1/1;
     @media (max-width: $s) {
       object-fit: cover;
@@ -267,27 +284,35 @@
 .grid0 {
   grid-area: grid0;
 }
+
 .grid1 {
   grid-area: grid1;
 }
+
 .grid2 {
   grid-area: grid2;
 }
+
 .grid3 {
   grid-area: grid3;
 }
+
 .grid4 {
   grid-area: grid4;
 }
+
 .grid5 {
   grid-area: grid5;
 }
+
 .grid6 {
   grid-area: grid6;
 }
+
 .grid7 {
   grid-area: grid7;
 }
+
 .grid8 {
   grid-area: grid8;
 }

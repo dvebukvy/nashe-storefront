@@ -8,7 +8,7 @@
 
         .footer__send-section
           Input(type='text', placeholder='dsadsad')
-          Button(icon='arrow-right-20' class='medium')
+          Button.medium(icon='arrow-right-20')
         .footer__small-text Подписываясь на рассылку, вы соглашаетесь с условиями <a class='footer__small-text link' href='#'>Политики конфиденциальности</a>
       .footer__links-section
         .footer__list
@@ -62,10 +62,10 @@
         .footer__text © 2018–2022. Интернет-магазин одежды «Наше»
         .footer__row
           .footer__separator.alt
-          nuxt-link.footer__text.grey(to='/') Пользовательское соглашение
+          nuxt-link.footer__text.gray(to='/') Пользовательское соглашение
           .footer__separator
-          nuxt-link.footer__text.grey(to='/') Политика конфиденциальности
-      a.footer__two-letters(href='https://dvebukvy.ru/' target='_blanc')
+          nuxt-link.footer__text.gray(to='/') Политика конфиденциальности
+      a.footer__two-letters(href='https://dvebukvy.ru/', target='_blanc')
         svg-icon(name='dvebukvy')
         .footer__text «Две буквы»
 </template>

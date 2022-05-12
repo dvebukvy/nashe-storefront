@@ -53,7 +53,7 @@
 
     &.old {
       @include fontSize(16, 24);
-      color: $grey-50;
+      color: $gray-50;
       text-decoration: line-through;
       font-weight: 400;
     }
@@ -96,6 +96,7 @@
 
   &__button-add {
     width: 167px;
+
     @media (max-width: $s) {
       width: 100%;
     }
@@ -107,7 +108,7 @@
 
   &__wholesale {
     padding: 16px 24px;
-    background-color: $grey-10;
+    background-color: $gray-10;
     border-radius: 12px;
     margin-top: 24px;
     display: flex;
@@ -121,9 +122,9 @@
     color: $brand-secondary;
     font-weight: 400;
 
-    &.grey {
+    &.gray {
       @include fontSize(13, 20);
-      color: $grey-50;
+      color: $gray-50;
       margin-top: 12px;
     }
   }
@@ -159,15 +160,14 @@
     padding-top: 8px;
   }
 
-  &__section {
-  }
+  &__section {}
 
   &__box {
     display: flex;
     align-items: center;
     gap: 8px;
 
-    & + & {
+    &+& {
       margin-top: 8px;
     }
   }

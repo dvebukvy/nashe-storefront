@@ -1,7 +1,7 @@
 .store-card {
     display: flex;
     justify-content: space-between;
-    border-top: 1px solid $grey-20;
+    border-top: 1px solid $gray-20;
     padding: 32px 0;
 
     &__address {
@@ -10,20 +10,20 @@
         }
 
         span {
-            color: $grey-50;
+            color: $gray-50;
         }
     }
 
     &__hours {
         .title {
-            color: $grey-50;
+            color: $gray-50;
             padding-bottom: 4px;
         }
     }
 
     &__phones {
         .title {
-            color: $grey-50;
+            color: $gray-50;
             padding-bottom: 8px;
         }
     }

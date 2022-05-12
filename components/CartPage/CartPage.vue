@@ -7,19 +7,18 @@
       img.cart-page__image(:src='item.image')
       .cart-page__block
         .cart-page__close
-          svg-icon.cart-page__close-icon(name="close-16")
+          svg-icon.cart-page__close-icon(name='close-16')
         .cart-page__prices
           p.cart-page__price(:class='{ new: item.priceOld }') {{ item.price }} руб.
           p.cart-page__price.old(v-if='item.priceOld') {{ item.priceOld }} руб.
         p.cart-page__text.padding {{ item.name }}
-        p.cart-page__text.grey Цвет: {{ item.color }}
+        p.cart-page__text.gray Цвет: {{ item.color }}
         .cart-page__bottom
           .cart-page__actions
             .cart-page__box
-              p.cart-page__text.grey Размер:
+              p.cart-page__text.gray Размер:
               .cart-page__select
-                Select(
-                  class='small'
+                Select.small(
                   :data='sizes',
                   placeholder='Размер',
                   :searchable='false',
@@ -27,7 +26,7 @@
                   :selectedData='sizes[item.size]'
                 )
               .cart-page__select-mobile
-                Select(                 
+                Select(
                   :data='sizes',
                   placeholder='Размер',
                   :searchable='false',
@@ -35,12 +34,12 @@
                   :selectedData='sizes[item.size]'
                 )
             .cart-page__box
-              p.cart-page__text.grey Количество:
+              p.cart-page__text.gray Количество:
               .cart-page__counter
-                Counter(:quantity='item.quantity' class='small')
+                Counter.small(:quantity='item.quantity')
               .cart-page__counter-mobile
-                Counter(:quantity='item.quantity' class='medium')
-          p.cart-page__price {{item.price * item.quantity}} руб.
+                Counter.medium(:quantity='item.quantity')
+          p.cart-page__price {{ item.price * item.quantity }} руб.
           .cart-page__delete
             .cart-page__text.primary Удалить из корзины
   .cart-page__mobile
@@ -52,7 +51,7 @@
 
 <script>
 export default {
-  props: ['data', 'colors', 'sizes'],  
+  props: ['data', 'colors', 'sizes'],
 }
 </script>
 

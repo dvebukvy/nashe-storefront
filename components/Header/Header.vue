@@ -642,6 +642,11 @@ export default {
       }
     },
   },
+  watch: {
+    $route(to, from) {
+      this.closeCart()
+    },
+  },
   mounted() {
     this.$nuxt.$on('closeMenu', this.openMenu)
   },
