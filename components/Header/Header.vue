@@ -7,14 +7,15 @@
           .header__links
             nuxt-link.header__sublink(to='/') Доставка и оплата
             nuxt-link.header__sublink(to='/') Обмен и возврат
-            nuxt-link.header__sublink(to='/') О компании
-            nuxt-link.header__sublink(to='/') Магазины
-            nuxt-link.header__sublink(to='/') Контакты
+            nuxt-link.header__sublink(to='/about') О компании
+            nuxt-link.header__sublink(to='/shops') Магазины
+            nuxt-link.header__sublink(to='/contacts') Контакты
             nuxt-link.header__sublink(to='/') Блог
             a.header__sublink-badge(href='/', target='_blanc') Оптовый сайт
           Contact.small
     .header__line
       .container
+        CartDropdown(v-if='showCart', v-click-outside='closeCart')
         .header__bottom
           .header__links
             nuxt-link(to='/')
@@ -22,39 +23,47 @@
             .header__nav-list
               NavItem(v-for='item in navMenu', :key='item.id', :data='item')
           .header__actions
-            .header__action-button              
-              svg-icon.header__action-icon(name='search-24')
+            .header__action-button 
+              svg-icon.header__action-icon(
+                name='search-24',
+                @click='openPopupSearch'
+              )
             .header__action-button
-              svg-icon.header__action-icon(name='user-24')
+              nuxt-link(to='/user')
+                svg-icon.header__action-icon(name='user-24')
             .header__action-button
-              svg-icon.header__action-icon(name='favorite-24')
-            .header__action-button
+              nuxt-link(to='/favorites')
+                svg-icon.header__action-icon(name='favorite-24')
+            .header__action-button(@click='showCart = !showCart')
               span.header__action-quantity 3
               svg-icon.header__action-icon(name='cart-24')
   .header__mobile
-    .header__mobile-menu(:class='{active: menuVisible}')
-      MobileMenu(:data='navMenu' :class='{active: menuVisible}')
+    .header__mobile-menu(:class='{ active: menuVisible }')
+      MobileMenu(:data='navMenu', :class='{ active: menuVisible }')
     .header__block
       .header__action-button(@click='openMenu')
         svg-icon.header__action-icon(name='list-24')
-      .header__action-button              
+      .header__action-button 
         svg-icon.header__action-icon(name='search-24')
     .header__block
       nuxt-link(to='/')
         svg-icon.header__logo(name='logotype')
     .header__block
-      .header__action-button              
-        svg-icon.header__action-icon(name='favorite-24')
       .header__action-button 
-        span.header__action-quantity 3             
+        nuxt-link(to='/favorites')
+          svg-icon.header__action-icon(name='favorite-24')
+      .header__action-button 
+        span.header__action-quantity 3
         svg-icon.header__action-icon(name='cart-24')
 </template>
 
 <script>
+import PopupSearch from '@/components/Popup/PopupSearch'
 export default {
   data() {
     return {
       menuVisible: false,
+      showCart: false,
       navMenu: [
         {
           title: 'Женщинам',
@@ -614,7 +623,24 @@ export default {
     openMenu() {
       this.menuVisible = !this.menuVisible
       this.$nuxt.$emit('showFirst')
-    }
+    },
+    openPopupSearch() {
+      this.$modal.show(
+        PopupSearch,
+        {},
+        {
+          width: '640',
+          scrollable: true,
+          shiftY: 0,
+          overlayTransition: 'popup',
+        }
+      )
+    },
+    closeCart() {
+      if (this.showCart) {
+        this.showCart = false
+      }
+    },
   },
   mounted() {
     this.$nuxt.$on('closeMenu', this.openMenu)
