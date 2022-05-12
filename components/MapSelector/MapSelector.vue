@@ -1,15 +1,15 @@
 <template lang="pug">
 .map-selector
   .map-selector__close(@click='closeMap')
-    svg-icon.map-selector__close-icon(name="close-16")
+    svg-icon.map-selector__close-icon(name='close-16')
   .map-selector__sidebar
     .map-selector__top
       .map-selector__header
         p.map-selector__title Выбор магазина
       .map-selector__selector
-        Select(:data='cities' :selectedData='cities[0]')
+        Select(:data='cities', :selectedData='cities[0]')
       .map-selector__list
-        .map-selector__item(v-for="item in 4" :key="item.id")
+        .map-selector__item(v-for='item in 4', :key='item.id')
           .map-selector__item-header
             .map-selector__text.bold Магазин на улице Братьев Луканиных
             Radio
@@ -17,7 +17,7 @@
             svg-icon.map-selector__icon(name='pin-20')
             .map-selector__box-list
               p.map-selector__text Смоленск, ул. Соболева, д. 25
-              p.map-selector__text.grey (Здание Смоленской чулочно-трикотажной фабрики НАШЕ)
+              p.map-selector__text.gray (Здание Смоленской чулочно-трикотажной фабрики НАШЕ)
           .map-selector__item-box
             svg-icon.map-selector__icon(name='clock-20')
             .map-selector__box-list
@@ -34,30 +34,30 @@
 </template>
 
 <script>
-export default { 
+export default {
   data() {
     return {
       cities: [
         {
-          label: "Смоленск",
-          value: "smolensk"
+          label: 'Смоленск',
+          value: 'smolensk',
         },
         {
-          label: "Вязьма",
-          value: "vyazma"
+          label: 'Вязьма',
+          value: 'vyazma',
         },
         {
-          label: "Ярцево",
-          value: "yartsevo"
+          label: 'Ярцево',
+          value: 'yartsevo',
         },
-      ]
+      ],
     }
   },
   methods: {
     closeMap() {
       this.$nuxt.$emit('closeMap')
     },
-  }
+  },
 }
 </script>
 

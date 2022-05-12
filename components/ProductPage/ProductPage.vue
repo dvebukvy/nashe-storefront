@@ -3,40 +3,69 @@
   ProductImages(:data='data.images')
   .product-page__mobile-cart
     .product-page__button-add
-      Counter(v-model="form.quantity" :data='form.quantity' v-if="form.quantity > 0")
-      Button(label='Добавить в корзину' @click.native='addToCart' v-else)
-    Button(icon='favorite-20' class='outline' @click.native='addFavoite' v-if="!form.inFavorites")
-    Button(icon='favorite-fill-20' class='outline' @click.native='removeFavoite' v-if="form.inFavorites")
+      Counter(
+        v-model='form.quantity',
+        :data='form.quantity',
+        v-if='form.quantity > 0'
+      )
+      Button(label='Добавить в корзину', @click.native='addToCart', v-else)
+    Button.outline(
+      icon='favorite-20',
+      @click.native='addFavoite',
+      v-if='!form.inFavorites'
+    )
+    Button.outline(
+      icon='favorite-fill-20',
+      @click.native='removeFavoite',
+      v-if='form.inFavorites'
+    )
   .product-page__data
-    .product-page__badges(v-if="data.badges || data.sale")
-      Badge(:label='item', v-for='item in data.badges', :key='item.id' v-if="data.badges" class='primary-color')
-      Badge(:label='data.sale', :sale='true' v-if="data.sale" class='status-red')
-    p.product-page__name {{data.name}}
+    .product-page__badges(v-if='data.badges || data.sale')
+      Badge.primary-color(
+        :label='item',
+        v-for='item in data.badges',
+        :key='item.id',
+        v-if='data.badges'
+      )
+      Badge.status-red(:label='data.sale', :sale='true', v-if='data.sale')
+    p.product-page__name {{ data.name }}
     .product-page__prices
       p.product-page__price(:class='{ new: data.priceOld }') {{ data.price }} руб.
       p.product-page__price.old(v-if='data.priceOld') {{ data.priceOld }} руб.
-    .product-page__colors(v-if="data.colors")
-      p.product-page__subtitle Цвет: {{form.color.name}}
-      ColorRadios(v-model="form.color" :data='data.colors')
-    .product-page__colors(v-if="data.sizes")
-      p.product-page__subtitle Размер: {{form.size.name}} 
-      ValueRadios(v-model="form.size" :data='data.sizes')
+    .product-page__colors(v-if='data.colors')
+      p.product-page__subtitle Цвет: {{ form.color.name }}
+      ColorRadios(v-model='form.color', :data='data.colors')
+    .product-page__colors(v-if='data.sizes')
+      p.product-page__subtitle Размер: {{ form.size.name }}
+      ValueRadios(v-model='form.size', :data='data.sizes')
     .product-page__size-table(@click='openSizeModal') Таблица размеров
     .product-page__cart-section
-      .product-page__button-add        
-        Counter(v-model="form.quantity" :data='form.quantity' v-if="form.quantity > 0")
-        Button(label='Добавить в корзину' @click.native='addToCart' v-else)
-      Button(icon='favorite-20' class='outline' @click.native='addFavoite' v-if="!form.inFavorites")
-      Button(icon='favorite-fill-20' class='outline' @click.native='removeFavoite' v-if="form.inFavorites")
+      .product-page__button-add 
+        Counter(
+          v-model='form.quantity',
+          :data='form.quantity',
+          v-if='form.quantity > 0'
+        )
+        Button(label='Добавить в корзину', @click.native='addToCart', v-else)
+      Button.outline(
+        icon='favorite-20',
+        @click.native='addFavoite',
+        v-if='!form.inFavorites'
+      )
+      Button.outline(
+        icon='favorite-fill-20',
+        @click.native='removeFavoite',
+        v-if='form.inFavorites'
+      )
     .product-page__cart-section
       .product-page__button-add
-        Button(label='Нет в наличии' :disabled='true')
-      Button(icon='favorite-20' class='outline') 
+        Button(label='Нет в наличии', :disabled='true')
+      Button.outline(icon='favorite-20') 
     .product-page__calculator
       SaleCalculator(:price='data.price')
     .product-page__wholesale
       p.product-page__text Этот товар можно купить оптом
-      Button(label='Купить' class='outline small' width='80px')
+      Button.outline.small(label='Купить', width='80px')
     .product-page__info
       Accordion(title='Описание')
         .product-page__accordion-content
@@ -64,7 +93,7 @@
                   th Обхват груди
                   th Длина рукава
               tbody
-                tr                          
+                tr 
                   td XS
                   td 60
                   td 80
@@ -89,7 +118,7 @@
                   td 63
                   td 96
                   td 56
-          p.product-page__text.grey Все размеры указаны в сантиметрах
+          p.product-page__text.gray Все размеры указаны в сантиметрах
       Accordion(title='Доставка и возврат')
         .product-page__accordion-content
           .product-page__section
@@ -121,18 +150,18 @@ export default {
   data() {
     return {
       form: {
-        color: {hex: '4', name: 'Черный'},
-        size: {name: '42'},
+        color: { hex: '4', name: 'Черный' },
+        size: { name: '42' },
         quantity: 0,
-        inFavorites: false
-      }
+        inFavorites: false,
+      },
     }
   },
   methods: {
-    addFavoite() {      
-      this.form.inFavorites = true      
+    addFavoite() {
+      this.form.inFavorites = true
     },
-    removeFavoite() {      
+    removeFavoite() {
       this.form.inFavorites = false
     },
     addToCart() {

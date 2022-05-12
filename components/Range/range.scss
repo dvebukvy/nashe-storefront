@@ -20,8 +20,8 @@
 
   &__input {
     width: 136px;
-    border: 1px solid $grey-10;
-    background-color: $grey-10;
+    border: 1px solid $gray-10;
+    background-color: $gray-10;
     padding: 9px 11px 9px 38px;
     color: $brand-secondary;
     @include fontSize(14, 20);
@@ -29,17 +29,18 @@
     border-radius: 8px;
     outline: none;
     transition: border 0.3s ease;
-    text-overflow: ellipsis; 
-    white-space: nowrap; 
-    overflow: hidden; 
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 
     &::placeholder {
-      color: $grey-50;
+      color: $gray-50;
     }
 
     &:hover {
-      border: 1px solid $grey-20;
+      border: 1px solid $gray-20;
     }
+
     &:focus {
       border: 1px solid $brand-primary;
     }

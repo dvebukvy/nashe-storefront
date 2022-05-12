@@ -1,24 +1,24 @@
 .toggle {
-  $this: &; 
+  $this: &;
   position: relative;
   display: inline-block;
   width: 36px;
-  height: 20px;  
+  height: 20px;
   flex-shrink: 0;
   cursor: pointer;
 
   // &.disabled {
   //   #{$this}__slider {
-  //     border: 1px solid $grey-20;
+  //     border: 1px solid $gray-20;
   //     background-color: $white;
   //     &::before {        
-  //       background-color: $grey-40;        
+  //       background-color: $gray-40;        
   //     }
   //   }
 
   //   input:checked + .toggle__slider {
-  //     background-color: $grey-30;
-  //     border: 1px solid $grey-30;
+  //     background-color: $gray-30;
+  //     border: 1px solid $gray-30;
   //     &::before {        
   //       background-color: $white;        
   //     }
@@ -28,7 +28,7 @@
   input {
     opacity: 0;
     width: 0;
-    height: 0;    
+    height: 0;
   }
 
   &__text {
@@ -38,12 +38,12 @@
     flex-shrink: 0;
     top: 0;
     left: 40px;
-    color: $grey-100;
+    color: $gray-100;
     @include fontSize(14, 20);
-    font-weight: 400;  
+    font-weight: 400;
 
     &.disabled {
-      color: $grey-50;
+      color: $gray-50;
     }
   }
 
@@ -54,8 +54,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: $grey-10;
-    border: 1px solid $grey-20;
+    background-color: $gray-10;
+    border: 1px solid $gray-20;
     -webkit-transition: 0.4s;
     transition: 0.4s;
     border-radius: 999px;
@@ -67,7 +67,7 @@
       width: 14px;
       left: 2px;
       bottom: 2px;
-      background-color: $grey-40;
+      background-color: $gray-40;
       -webkit-transition: 0.4s;
       transition: 0.4s;
       border-radius: 50%;
@@ -76,16 +76,17 @@
 }
 
 
-input:checked + .toggle__slider {
-  background-color: $grey-10;
-  border: 1px solid $grey-20;
+input:checked+.toggle__slider {
+  background-color: $gray-10;
+  border: 1px solid $gray-20;
 }
+
 // input:disabled + .toggle__slider {
-//   border: 1px solid $grey-20;
-//   background-color: $grey-20;
+//   border: 1px solid $gray-20;
+//   background-color: $gray-20;
 // }
 
-input:checked + .toggle__slider:before {
+input:checked+.toggle__slider:before {
   background-color: $brand-primary;
   -webkit-transform: translateX(16px);
   -ms-transform: translateX(16px);

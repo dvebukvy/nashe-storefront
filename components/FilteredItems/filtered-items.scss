@@ -8,7 +8,7 @@
     align-items: center;
     gap: 4px;
     padding: 7px 11px;
-    border: 1px solid $grey-20;
+    border: 1px solid $gray-20;
     border-radius: 999px;
   }
 
@@ -16,10 +16,12 @@
     color: $brand-secondary;
     @include fontSize(13, 16);
     font-weight: 400;
+
     &.primary {
       color: $brand-primary;
     }
   }
+
   &__icon {
     width: 16px;
     height: 16px;
@@ -29,6 +31,6 @@
     &:hover {
       fill: $brand-primary;
     }
-    
+
   }
 }

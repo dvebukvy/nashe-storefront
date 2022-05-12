@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   @media (max-width: $s) {
     padding: 16px 0;
   }
@@ -16,6 +17,7 @@
 
   &__item {
     flex-shrink: 0;
+
     @media (max-width: $s) {
       display: none;
 
@@ -34,7 +36,7 @@
     margin-right: 4px;
 
     @media (max-width: $s) {
-      @include fontSize(13, 16);      
+      @include fontSize(13, 16);
     }
 
     &.dash {
@@ -44,7 +46,7 @@
     }
 
     &.unactive {
-      color: $grey-50;
+      color: $gray-50;
     }
   }
 
@@ -54,6 +56,7 @@
     margin-right: 4px;
     fill: $brand-secondary;
     display: none;
+
     @media (max-width: $s) {
       display: block;
     }
@@ -66,13 +69,14 @@
   }
 
   &__text {
-    color: $grey-50;
+    color: $gray-50;
     @include fontSize(14, 16);
     font-weight: 400;
-    
+
 
     @media (max-width: $s) {
       @include fontSize(13, 16);
+
       &:nth-child(1) {
         display: none;
       }

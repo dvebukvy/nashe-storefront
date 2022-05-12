@@ -16,8 +16,8 @@
       span.body-1-m Итого
       span.body-1-m 5 600 руб.
     .buttons
-      Button.outline.width-140.height-40(label='В корзину')
-      Button.width-140.height-40(label='Оформить заказ')
+      Button.outline.width-140.height-40(label='В корзину', link='/cart')
+      Button.width-140.height-40(label='Оформить заказ', link='/order')
 </template>
 
 <script>

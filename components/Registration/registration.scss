@@ -42,7 +42,7 @@
     flex-direction: column;
     gap: 8px;
 
-    & + & {
+    &+& {
       margin-top: 24px;
     }
   }
@@ -58,7 +58,7 @@
     flex-direction: column;
     padding-top: 40px;
     padding-bottom: 24px;
-    border-bottom: 1px solid $grey-20;
+    border-bottom: 1px solid $gray-20;
     gap: 20px;
     justify-content: center;
     align-items: center;
@@ -70,13 +70,13 @@
     font-weight: 400;
 
     &.primary {
-      color: $brand-primary !important;
+      color: $brand-primary  !important;
       font-weight: 500;
     }
 
-    &.grey {
+    &.gray {
       @include fontSize(13, 20);
-      color: $grey-50;
+      color: $gray-50;
       text-align: center;
       font-weight: 400 !important;
     }

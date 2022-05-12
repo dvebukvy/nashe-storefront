@@ -33,6 +33,7 @@
     @media (max-width: $m) {
       @include fontSize(20, 28);
     }
+
     @media (max-width: $s) {
       @include fontSize(18, 24);
     }
@@ -48,6 +49,7 @@
     position: relative;
     overflow: hidden;
     border-radius: 12px;
+
     &:hover {
       #{$this}__controls {
         opacity: 1;
@@ -131,14 +133,14 @@
       transform: rotateY(180deg);
     }
   }
-  
+
 
   &__pagination {
     width: 100% !important;
     height: 12px;
     position: absolute;
     bottom: -24px;
-    
+
     align-items: center;
     display: flex;
     justify-content: center;
@@ -149,13 +151,13 @@
       // bottom: -16px;
     }
   }
-  
+
 
   & .swiper-pagination-bullet {
     position: relative;
     width: 6px;
     height: 6px;
-    background-color: $grey-20;
+    background-color: $gray-20;
     border-radius: 100%;
     overflow: hidden;
     margin-right: 8px;

@@ -17,7 +17,7 @@
             th Обхват бедер
         tbody
           tr
-            td 42            
+            td 42
             td XS
             td 170
             td 84
@@ -86,9 +86,8 @@
             td 170
             td 120
             td 100
-            td 128    
-    p.modal__text.grey Все размеры указаны в сантиметрах
-    
+            td 128
+    p.modal__text.gray Все размеры указаны в сантиметрах
 </template>
 
 

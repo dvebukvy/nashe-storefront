@@ -7,7 +7,7 @@
 
   &.background {
     #{$this}__input {
-      background-color: $grey-10;
+      background-color: $gray-10;
     }
   }
 
@@ -28,11 +28,11 @@
     overflow: hidden;
 
     &::placeholder {
-      color: $grey-50;
+      color: $gray-50;
     }
 
     &:hover {
-      border: 1px solid $grey-20;
+      border: 1px solid $gray-20;
     }
 
     &.focused {
@@ -77,7 +77,7 @@
 
   &__text {
     padding-top: 8px;
-    color: $grey-50;
+    color: $gray-50;
     @include fontSize(13, 20);
     font-weight: 400;
 

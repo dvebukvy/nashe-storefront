@@ -11,20 +11,21 @@
   &__container {
     display: flex;
     flex-direction: column;
-    
+
   }
-  
+
 
   &__text {
     color: $brand-secondary;
     @include fontSize(14, 20);
     font-weight: 400;
+
     &.padding {
       padding-top: 8px;
     }
 
-    &.grey {
-      color: $grey-50;
+    &.gray {
+      color: $gray-50;
 
       &:hover {
         color: $brand-primary;
@@ -33,7 +34,7 @@
   }
 
   &__small-text {
-    color: $grey-50;
+    color: $gray-50;
     @include fontSize(12, 16);
     font-weight: 400;
 
@@ -42,20 +43,20 @@
     }
   }
 
-  
+
 
   &__info {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 26px 0;
-    
+
 
     @media (max-width: $xs) {
       flex-direction: column;
-      justify-content: center; 
-      gap: 24px;    
-      padding: 24px 0; 
+      justify-content: center;
+      gap: 24px;
+      padding: 24px 0;
     }
   }
 
@@ -69,6 +70,7 @@
         flex-direction: column;
         gap: 10px;
       }
+
       @media (max-width: $xs) {
         align-items: center;
       }
@@ -76,18 +78,18 @@
 
     @media (max-width: $xs) {
       // align-items: flex-start;
-        flex-direction: column;
-        gap: 12px;
+      flex-direction: column;
+      gap: 12px;
     }
 
-    
+
   }
 
   &__separator {
     width: 1px;
     height: 16px;
     margin: 0 8px;
-    background-color: $grey-30;
+    background-color: $gray-30;
 
     &.alt {
       @media (max-width: $s) {
@@ -104,15 +106,18 @@
     display: flex;
     align-items: center;
     gap: 8px;
+
     &:hover {
-      & > svg {
+      &>svg {
         fill: $brand-primary;
       }
+
       #{$this}__text {
         color: $brand-primary;
       }
     }
-    & > svg {
+
+    &>svg {
       width: 32px;
       height: 32px;
       fill: $brand-secondary;
@@ -123,6 +128,7 @@
     padding-top: 32px;
     display: none;
     width: 100%;
+
     @media (max-width: $s) {
       display: flex;
       flex-direction: column;
@@ -139,6 +145,6 @@
     @include fontSize(14, 20);
     font-weight: 400;
     padding: 14px 16px;
-    box-shadow: inset 0px 1px 0px $grey-20;
+    box-shadow: inset 0px 1px 0px $gray-20;
   }
 }

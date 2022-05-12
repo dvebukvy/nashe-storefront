@@ -13,7 +13,7 @@
     padding: 11px 15px;
     border-radius: 999px;
     background-color: $white;
-    border: 1px solid $grey-20;
+    border: 1px solid $gray-20;
     cursor: pointer;
     color: $brand-secondary;
     @include fontSize(14, 16);
@@ -21,7 +21,7 @@
     transition: all 0.3s ease;
 
     &.selected {
-      background-color: $grey-10;
+      background-color: $gray-10;
       border: 1px solid $brand-primary;
       color: $brand-primary;
     }
