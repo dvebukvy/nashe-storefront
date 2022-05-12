@@ -23,11 +23,11 @@
   }
 
   &:disabled {
-    // background-color: $grey-40;
+    // background-color: $gray-40;
     opacity: 0.64;
     cursor: not-allowed;
     // #{$this}__hotkey {
-    //   color: $grey-20;
+    //   color: $gray-20;
     // }
   }
 
@@ -81,7 +81,7 @@
   &.delete {
     width: unset;
     height: 40px !important;
-    background-color: $grey-10;
+    background-color: $gray-10;
 
     #{$this}__span {
       color: $brand-secondary;
@@ -93,11 +93,11 @@
     }
 
     &:hover {
-      background-color: $grey-15;
+      background-color: $gray-15;
     }
 
     &:active {
-      background-color: $grey-20;
+      background-color: $gray-20;
     }
 
     &:disabled {
@@ -108,7 +108,7 @@
   &.outline {
     // background-color: unset;
     background-color: $white;
-    border: 1px solid $grey-20;
+    border: 1px solid $gray-20;
 
     #{$this}__hotkey {
       color: rgba(207, 100, 63, 0.64);
@@ -124,7 +124,7 @@
 
     &:hover {
       border: 1px solid $brand-primary;
-      background-color: $grey-10;
+      background-color: $gray-10;
 
       #{$this}__span {
         color: $brand-primary;
@@ -136,7 +136,7 @@
     }
 
     &:active {
-      background-color: $grey-15;
+      background-color: $gray-15;
     }
 
     &:disabled {
@@ -145,12 +145,12 @@
 
     &-error {
       background-color: transparent !important;
-      border: 1px solid $grey-20  !important;
+      border: 1px solid $gray-20  !important;
       border-radius: 8px !important;
 
       &:hover {
-        border: 1px solid $grey-20;
-        background-color: $grey-20  !important;
+        border: 1px solid $gray-20;
+        background-color: $gray-20  !important;
 
         #{$this}__span {
           color: $brand-primary;
@@ -166,7 +166,7 @@
   &.link {
     height: 40px;
     border: unset;
-    border-radius: 999px;
+    border-radius: 8px;
     background-color: rgba(207, 100, 63, 0.12);
     font-weight: 400;
 
@@ -188,7 +188,7 @@
   }
 
   &.is-filter {
-    background-color: $grey-10;
+    background-color: $gray-10;
     width: 196px;
     padding: 0;
 
@@ -203,11 +203,11 @@
     }
 
     &:hover {
-      background-color: $grey-15;
+      background-color: $gray-15;
     }
 
     &:active {
-      background-color: $grey-20;
+      background-color: $gray-20;
     }
   }
 
@@ -223,7 +223,7 @@
       border-radius: 100%;
       top: 10px;
       left: 23px;
-      border: 2px solid $grey-10;
+      border: 2px solid $gray-10;
     }
   }
 
@@ -255,33 +255,33 @@
   // &.secondary {
   //   padding: 9px 11px;
   //   background-color: $white;
-  //   border: 1px solid $grey-20;
+  //   border: 1px solid $gray-20;
   //   #{$this}__hotkey {
-  //     color: $grey-40;
+  //     color: $gray-40;
   //   }
   //   #{$this}__span {
-  //     color: $grey-100;
+  //     color: $gray-100;
   //   }
   //   #{$this}__icon {
-  //     fill: $grey-100;
+  //     fill: $gray-100;
   //   }
 
   //   &:hover {
-  //     background-color: $grey-20;
+  //     background-color: $gray-20;
   //   }
   //   &:disabled {
   //     opacity: 0.48;
   //     background-color: $white;
-  //     // border: 1px solid $grey-40;
+  //     // border: 1px solid $gray-40;
   //     cursor: not-allowed;
   //     #{$this}__hotkey {
-  //       color: $grey-40;
+  //       color: $gray-40;
   //     }
   //     #{$this}__span {
-  //       color: $grey-100;
+  //       color: $gray-100;
   //     }
   //     #{$this}__icon {
-  //       fill: $grey-100;
+  //       fill: $gray-100;
   //     }
   //   }
   // }
@@ -289,30 +289,30 @@
   // &.ghost {
   //   background-color: unset;
   //   #{$this}__hotkey {
-  //     color: $grey-40;
+  //     color: $gray-40;
   //   }
   //   #{$this}__span {
-  //     color: $grey-100;
+  //     color: $gray-100;
   //   }
   //   #{$this}__icon {
-  //     fill: $grey-100;
+  //     fill: $gray-100;
   //   }
 
   //   &:hover {
-  //     background-color: $grey-20;
+  //     background-color: $gray-20;
   //   }
   //   &:disabled {
   //     opacity: 0.48;
   //     background-color: unset;
   //     cursor: not-allowed;
   //     #{$this}__hotkey {
-  //       color: $grey-40;
+  //       color: $gray-40;
   //     }
   //     #{$this}__span {
-  //       color: $grey-100;
+  //       color: $gray-100;
   //     }
   //     #{$this}__icon {
-  //       fill: $grey-100;
+  //       fill: $gray-100;
   //     }
   //   }
   // }
@@ -362,11 +362,11 @@
   //   padding: 6px !important;
   // }
 
-  // &.grey {
-  //   background-color: $grey-20;
+  // &.gray {
+  //   background-color: $gray-20;
   // }
-  // &.light-grey {
-  //   background-color: $grey-15;
+  // &.light-gray {
+  //   background-color: $gray-15;
   // }
 
   // &.dark-blue {

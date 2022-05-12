@@ -1,51 +1,51 @@
 .checkbox {
-  $this: &; 
+  $this: &;
   position: relative;
   display: inline-flex;
   align-items: center;
   border-radius: 4px;
-  cursor: pointer;   
+  cursor: pointer;
 
-  &+&{
+  &+& {
     padding-top: 12px;
-  } 
-  
+  }
 
-  &__box {    
+
+  &__box {
     width: 20px;
     height: 20px;
     border-radius: 4px;
-    border: 1px solid $grey-20;
+    border: 1px solid $gray-20;
     position: relative;
-    background-color: $grey-10;
+    background-color: $gray-10;
     transition: background-color 0.3s ease;
 
     &::before {
       position: absolute;
       top: 4px;
-      left: 4px; 
+      left: 4px;
       content: '';
       width: 10px;
-      height: 10px;      
+      height: 10px;
       border-radius: 2px;
       background-color: $brand-primary;
       opacity: 0;
-    }       
-  } 
+    }
+  }
 
   &__tag {
-    position: absolute;  
+    position: absolute;
 
     &:checked {
-      + .checkbox__box {
+      +.checkbox__box {
         &::before {
-          opacity: 1;          
+          opacity: 1;
         }
       }
     }
 
     &:disabled {
-      + .checkbox__box {
+      +.checkbox__box {
         opacity: 0.2;
       }
     }

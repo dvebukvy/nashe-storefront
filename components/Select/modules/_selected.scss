@@ -2,20 +2,20 @@
 .vs__selected {
   display: flex;
   align-items: center;
-  margin: 0;  
+  margin: 0;
   border: unset;
   background-color: $brand-primary;
   border-radius: 4px;
   // padding: 0 0 0 8px;
   @include fontSize(14, 20);
   color: $white;
-  font-weight: 400;  
+  font-weight: 400;
   cursor: pointer;
   z-index: 0;
   position: relative;
   height: 24px;
   // padding-right: 32px;
-  
+
 
   &:hover {
     .vs__deselect {
@@ -43,9 +43,9 @@
 
   &::after {
     content: '';
-    position: absolute;    
+    position: absolute;
     width: 20px;
-    height: 20px;    
+    height: 20px;
     left: 2px;
     top: 2px;
     background-image: url("data:image/svg+xml;utf8,<svg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M9 10L5.625 6.625L6.625 5.625L10 9L13.375 5.625L14.375 6.625L11 10L14.375 13.375L13.375 14.375L10 11L6.625 14.375L5.625 13.375L9 10Z' fill='rgb(255, 255, 255)'/></svg>")
@@ -57,13 +57,15 @@
 .vs--single {
   .vs__selected {
     @include fontSize(14, 20);
-    color: $grey-100;
+    color: $gray-100;
     font-weight: 400;
   }
+
   &.vs--open .vs__selected {
     position: absolute;
     opacity: 1 !important;
   }
+
   &.vs--searching .vs__selected {
     display: none;
   }

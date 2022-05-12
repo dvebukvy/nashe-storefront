@@ -43,10 +43,6 @@
         text-align: center;
       }
     }
-
-    .breadcrumbs {
-      padding-bottom: 0;
-    }
   }
 }
 
@@ -90,7 +86,7 @@
     flex-grow: 1;
 
     &.secondary {
-      background-color: $grey-10;
+      background-color: $gray-10;
     }
 
   }

@@ -6,6 +6,7 @@
   @media (max-width: $m) {
     grid-template-columns: 8fr 4fr;
   }
+
   @media (max-width: $s) {
     display: flex;
     flex-direction: column;
@@ -23,11 +24,12 @@
     justify-content: space-between;
     padding: 16px 24px;
     border-radius: 8px;
-    border: 1px solid $grey-20;
+    border: 1px solid $gray-20;
   }
 
   &__mobile {
     display: none;
+
     @media (max-width: $s) {
       display: block;
     }
@@ -37,6 +39,7 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+
     @media (max-width: $s) {
       display: none;
     }
@@ -69,8 +72,8 @@
     @include fontSize(14, 20);
     font-weight: 400;
 
-    &.grey {
-      color: $grey-50;
+    &.gray {
+      color: $gray-50;
       @include fontSize(13, 16);
     }
 
@@ -96,18 +99,21 @@
     width: 32px;
     height: 32px;
     border-radius: 999px;
-    background-color: $grey-10;
+    background-color: $gray-10;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
+
     &:hover {
-      background-color: $grey-15;
+      background-color: $gray-15;
     }
+
     &:active {
-      background-color: $grey-20;
+      background-color: $gray-20;
     }
+
     @media (max-width: $xs) {
       display: none;
     }
@@ -121,13 +127,16 @@
 
   &__counter {
     display: block;
+
     @media (max-width: $xs) {
       display: none;
     }
   }
+
   &__counter-mobile {
     display: none;
     max-width: 128px;
+
     @media (max-width: $xs) {
       display: block;
     }
@@ -136,6 +145,7 @@
   &__delete {
     display: none;
     margin-top: 16px;
+
     @media (max-width: $xs) {
       display: block;
     }

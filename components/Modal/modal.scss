@@ -29,7 +29,7 @@
     justify-content: center;
     width: 32px;
     height: 32px;
-    border: 1px solid $grey-20;
+    border: 1px solid $gray-20;
     border-radius: 100%;
     cursor: pointer;
 
@@ -38,6 +38,7 @@
         fill: $brand-primary;
       }
     }
+
     &:active {
       #{$this}__close {
         fill: #ae5435;
@@ -53,6 +54,7 @@
 
   &__content {
     padding: 24px;
+
     @media (max-width: $xs) {
       padding: 16px;
     }
@@ -61,7 +63,7 @@
   &__table {
     display: flex;
     height: 100%;
-    border-top: 1px solid $grey-20;
+    border-top: 1px solid $gray-20;
   }
 
   table {
@@ -97,13 +99,13 @@
 
   th,
   td {
-    
+
     @include fontSize(12, 16);
     font-weight: 400;
     color: $brand-secondary;
     padding: 8px 8px 7px;
     text-align: center;
-    border-bottom: 1px solid $grey-20;
+    border-bottom: 1px solid $gray-20;
   }
 
   td {
@@ -112,7 +114,7 @@
 
   th {
     padding: 16px 8px;
-    background-color: $grey-10;
+    background-color: $gray-10;
     font-weight: 500;
   }
 
@@ -126,8 +128,8 @@
     font-weight: 400;
     color: $brand-secondary;
 
-    &.grey {
-      color: $grey-50;
+    &.gray {
+      color: $gray-50;
       padding-top: 12px;
       padding-bottom: 16px;
     }

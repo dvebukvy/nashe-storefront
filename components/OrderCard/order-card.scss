@@ -1,0 +1,99 @@
+.order-card {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    cursor: pointer;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: inset 0px -1px 0px $gray-20;
+        padding: 20px 24px;
+
+        .order-info {
+            display: flex;
+            align-items: center;
+
+            &__number {
+                padding-right: 8px;
+            }
+
+            &__date {
+                padding-right: 12px;
+            }
+
+            &__status {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                padding: 4px 8px;
+                background: $brand-primary-12;
+                border-radius: 4px;
+            }
+        }
+    }
+
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: 24px;
+
+        .order-data {
+            padding: 24px;
+
+            &__delivery {
+                margin-bottom: 4px;
+            }
+
+            &__address {
+                margin-bottom: 16px;
+                padding-left: 28px;
+            }
+
+            &__pay {
+                margin-bottom: 4px;
+            }
+
+            &__pay-status {
+                padding-left: 28px;
+            }
+        }
+
+        .goods-images {
+            display: flex;
+            align-items: center;
+
+            .image {
+                width: 80px;
+                height: 80px;
+                border-radius: 8px;
+                object-fit: contain;
+                margin-right: 8px;
+                cursor: pointer;
+            }
+
+            .another-goods {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                width: 80px;
+                height: 80px;
+                background: $white;
+                border: 1px solid $gray-20;
+                border-radius: 8px;
+                color: $brand-secondary;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .order-icon {
+        margin-right: 8px;
+        width: 20px;
+        height: 20px;
+    }
+}

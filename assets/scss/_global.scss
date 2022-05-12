@@ -150,9 +150,66 @@ figure {
   margin: 0;
 }
 
-ol,
+ol.list-numbers {
+  list-style: none;
+  counter-reset: step;
+  padding-top: 8px;
+  padding-bottom: 12px;
+}
+
+ol.list-numbers li {
+  counter-increment: step;
+  padding-left: 32px;
+}
+
+ol.list-numbers li {
+  position: relative;
+  padding-bottom: 8px;
+
+  &::before {
+    content: counter(step, decimal) '.';
+    position: absolute;
+    left: 12px;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    font-weight: 500;
+    color: $brand-secondary;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
 ul {
   list-style: none;
+}
+
+ul {
+  padding-top: 8px;
+  padding-bottom: 12px;
+}
+
+ul.list-icons li {
+  position: relative;
+  padding-left: 32px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 8px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 12px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $brand-secondary;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
 }
 
 small {
@@ -196,7 +253,7 @@ table {
   bottom: 0;
   left: 0;
   z-index: 4;
-  // background: rgba($color-grey-900, .25);
+  // background: rgba($color-gray-900, .25);
   opacity: 0;
   visibility: hidden;
 
@@ -246,7 +303,7 @@ td {
   color: $brand-secondary;
   padding: 8px 8px 7px;
   text-align: center;
-  border-bottom: 1px solid $grey-20;
+  border-bottom: 1px solid $gray-20;
 }
 
 td {
@@ -255,7 +312,7 @@ td {
 
 th {
   padding: 16px 8px;
-  background-color: $grey-10;
+  background-color: $gray-10;
   font-weight: 500;
 }
 
@@ -298,7 +355,7 @@ th {
   @media (max-width: $xs) {
     font-size: 2rem;
     line-height: 2.8rem;
-    font-weight: 600;
+    font-weight: 700;
   }
 }
 
@@ -310,19 +367,19 @@ th {
   @media (max-width: $m) {
     font-size: 2rem;
     line-height: 2.8rem;
-    font-weight: 600;
+    font-weight: 700;
   }
 
   @media (max-width: $s) {
     font-size: 2rem;
     line-height: 2.8rem;
-    font-weight: 600;
+    font-weight: 700;
   }
 
   @media (max-width: $xs) {
     font-size: 1.8rem;
     line-height: 2.4rem;
-    font-weight: 600;
+    font-weight: 700;
   }
 }
 
@@ -416,31 +473,111 @@ th {
   font-weight: 500;
 }
 
+.text-color-primary {
+  color: $brand-primary  !important;
+}
+
+.text-color-red {
+  color: $status-red  !important;
+}
+
+.text-color-green {
+  color: $status-green  !important;
+}
+
+.text-color-gray-50 {
+  color: $gray-50  !important;
+}
+
+.bg-gray-10 {
+  background: $gray-10  !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.justify-content-between {
+  justify-content: space-between !important;
+}
+
+.align-items-center {
+  align-items: center !important;
+}
+
+.margin-auto {
+  margin: 0 auto !important;
+}
+
+.pt-8 {
+  padding-top: 8px !important;
+}
+
+.pt-12 {
+  padding-top: 12px !important;
+}
+
+.pt-16 {
+  padding-top: 16px !important;
+}
+
+.pt-24 {
+  padding-top: 24px !important;
+}
+
+.pt-32 {
+  padding-top: 32px !important;
+}
+
+.pb-8 {
+  padding-bottom: 8px !important;
+}
+
+.pb-12 {
+  padding-bottom: 12px !important;
+}
+
+.pb-16 {
+  padding-bottom: 16px !important;
+}
+
+.pb-24 {
+  padding-bottom: 24px !important;
+}
+
+.pb-32 {
+  padding-bottom: 32px !important;
+}
+
+.mt-40 {
+  margin-top: 40px !important;
+}
+
+.mb-24 {
+  margin-bottom: 24px !important;
+}
+
+.callout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 16px;
+  width: 648px;
+  height: 56px;
+  background: $gray-10;
+  border-radius: 8px;
+  margin-top: 12px;
+}
+
+/* Popup Styles */
+
 .vm--overlay {
   background: rgba(0, 0, 0, 0.48) !important;
 }
 
+/* Scroll Styles */
+
 .ps__rail-x,
 .ps__rail-y {
   z-index: 100;
-}
-
-.d-flex {
-  display: flex;
-}
-
-.justify-content-between {
-  justify-content: space-between;
-}
-
-.align-items-center {
-  align-items: center;
-}
-
-.margin-auto {
-  margin: 0 auto;
-}
-
-.mt-40 {
-  margin-top: 40px;
 }

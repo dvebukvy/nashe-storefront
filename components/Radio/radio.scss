@@ -5,15 +5,15 @@
   width: 20px;
   height: 20px;
   align-items: center;
-  cursor: pointer;  
+  cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 
-  
-  
-  
+
+
+
 
   &__text {
     display: flex;
@@ -36,8 +36,8 @@
     left: 0;
     height: 20px;
     width: 20px;
-    background-color: $grey-10;
-    border: 1px solid $grey-20;
+    background-color: $gray-10;
+    border: 1px solid $gray-20;
     border-radius: 50%;
     transition: background-color 0.3s ease;
 
@@ -47,19 +47,19 @@
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background: $grey-10;
+      background: $gray-10;
       transition: background-color 0.3s ease;
     }
   }
 }
 
-.radio:hover input ~ .radio__checkmark {  
+.radio:hover input~.radio__checkmark {
   // background-color: $color-accent-light-blue;
 }
 
 /* When the radio button is checked, add a blue background */
-.radio input:checked ~ .radio__checkmark {
-  background-color: $grey-10;
+.radio input:checked~.radio__checkmark {
+  background-color: $gray-10;
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
@@ -70,11 +70,11 @@
 }
 
 /* Show the indicator (dot/circle) when checked */
-.radio input:checked ~ .radio__checkmark:after {
-  background-color: $brand-primary !important;
+.radio input:checked~.radio__checkmark:after {
+  background-color: $brand-primary  !important;
 }
 
-input:disabled + .radio__checkmark {
+input:disabled+.radio__checkmark {
   // filter: grayscale(1);
   opacity: 0.2;
 }
