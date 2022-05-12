@@ -1,0 +1,25 @@
+.switcher {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px;
+    width: 171px;
+    height: 40px;
+    background: $white;
+    border: 1px solid $grey-20;
+    border-radius: 999px;
+
+    label {
+        font-size: 1.4rem;
+        line-height: 1.5rem;
+        font-weight: 400;
+        padding: 8px 10px;
+
+        &.active {
+            background: $grey-10;
+            border: 1px solid $brand-primary;
+            border-radius: 999px;
+        }
+    }
+}

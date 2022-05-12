@@ -1,0 +1,80 @@
+.popup {
+    box-shadow: 0px 4px 16px 4px rgba(36, 16, 15, 0.08);
+
+    &__search {
+        padding: 24px;
+    }
+
+    &__results {
+        .body {
+            padding: 0 12px 12px 12px;
+
+            &__title {
+                // font-size: 1.4rem;
+                font-weight: 500;
+                padding: 6px 12px;
+            }
+
+            &__items {
+                max-height: 424px;
+
+                .item {
+                    display: flex;
+                    align-items: center;
+                    padding: 6px 12px 6px 14.5px;
+                    cursor: pointer;
+
+                    span {
+                        padding-left: 10.5px;
+                    }
+                }
+
+                .item__found {
+                    display: flex;
+                    align-items: center;
+                    padding: 12px;
+
+                    .image {
+                        width: 96px;
+                        height: 96px;
+                        border-radius: 8px;
+                        object-fit: contain;
+                        margin-right: 16px;
+                    }
+
+                    .content {
+                        .price {
+                            display: block;
+                            font-size: 1.8rem;
+                            font-weight: 500;
+                            margin-bottom: 8px;
+                        }
+
+                        .desc {
+                            // font-size: 1.4rem;
+                        }
+                    }
+                }
+            }
+
+            .body__items-scroll {
+                overflow-y: scroll;
+            }
+
+            .result__error {
+                display: block;
+                text-align: center;
+                padding-top: 16px;
+                padding-bottom: 40px;
+            }
+        }
+
+        .footer {
+            margin-top: 0;
+            padding: 16px 24px;
+            background-color: #fff;
+            box-shadow: inset 0px 1px 0px #ECE8E5;
+        }
+
+    }
+}
