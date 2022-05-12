@@ -8,12 +8,14 @@
 @mixin mq($mq-breakpoint) {
   @if map-has-key($mq-breakpoints, $mq-breakpoint) {
     $mq-device: "";
-    @if $enable-mq-device == true {
+
+    @if $enable-mq-device ==true {
       $mq-device: "-device";
     }
 
     $mq-range: "min";
-    @if $mq-breakpoint == nth(map-keys($mq-breakpoints), 1) {
+
+    @if $mq-breakpoint ==nth(map-keys($mq-breakpoints), 1) {
       $mq-range: "max";
     }
 
@@ -32,7 +34,8 @@
 
 @mixin mq-custom($mq-range, $mq-breakpoint, $mq-device: $enable-mq-device) {
   $device: "";
-  @if $mq-device == true {
+
+  @if $mq-device ==true {
     $device: "-device";
   }
 
@@ -47,7 +50,7 @@
   margin-right: auto;
   margin-left: auto;
 
-  @if $enable-mq == true {
+  @if $enable-mq ==true {
     @each $mq-container-width in $mq-container-widths {
       $mq: nth($mq-container-width, 1);
       $container-width: nth($mq-container-width, 2);
@@ -66,7 +69,9 @@
         padding-left: $container-indent;
       }
     }
-  } @else {
+  }
+
+  @else {
     max-width: $container-width;
     padding-right: $container-indent;
     padding-left: $container-indent;
@@ -79,15 +84,15 @@
   justify-content: $justify-content;
   align-items: $align-items;
 
-  @if $main-axis == x {
+  @if $main-axis ==x {
     flex-flow: row wrap;
   }
 
-  @if $main-axis == y {
+  @if $main-axis ==y {
     flex-flow: column nowrap;
   }
 
-  @if $enable-mq == true {
+  @if $enable-mq ==true {
     @each $mq-grid-gutter in $mq-grid-gutters {
       $mq: nth($mq-grid-gutter, 1);
       $gutter: -#{nth($mq-grid-gutter, 2) / 2 * $multiplier};
@@ -97,7 +102,9 @@
         margin-left: $gutter;
       }
     }
-  } @else {
+  }
+
+  @else {
     $gutter: -$grid-gutter / 2 * $multiplier;
 
     margin-right: $gutter;
@@ -112,7 +119,7 @@
   flex: 0 0 $size;
   max-width: $size;
 
-  @if $enable-mq == true {
+  @if $enable-mq ==true {
     @each $mq-grid-gutter in $mq-grid-gutters {
       $mq: nth($mq-grid-gutter, 1);
       $gutter: nth($mq-grid-gutter, 2) / 2 * $grid-multiplier;
@@ -122,7 +129,9 @@
         padding-left: $gutter;
       }
     }
-  } @else {
+  }
+
+  @else {
     $gutter: $grid-gutter / 2;
 
     padding-right: $gutter * $grid-multiplier;
@@ -163,16 +172,19 @@
   $properties-length: length($properties-list);
   $values-length: length($values-list);
 
-  @if $properties-length == $values-length {
+  @if $properties-length ==$values-length {
     .mod_no-touchevents & {
-      @if $enable-interact-multiple == true {
+      @if $enable-interact-multiple ==true {
+
         &:#{$state},
         &.#{$state} {
           @for $i from 1 through $properties-length {
             #{nth($properties-list, $i)}: nth($values-list, $i);
           }
         }
-      } @else {
+      }
+
+      @else {
         &:#{$state} {
           @for $i from 1 through $properties-length {
             #{nth($properties-list, $i)}: nth($values-list, $i);
@@ -255,13 +267,10 @@
 
 // Links
 @mixin link-base {
-  color: $brand-secondary;
+  color: $brand-primary;
   text-decoration: none;
 
   &:hover {
     color: $brand-primary;
   }
 }
-
-
-
