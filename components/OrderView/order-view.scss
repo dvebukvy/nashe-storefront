@@ -45,6 +45,10 @@
                 display: flex;
                 padding-bottom: 24px;
 
+                @media (max-width: $xs) {
+                    flex-direction: column;
+                }
+
                 .label {
                     width: 192px;
                     color: $gray-50
