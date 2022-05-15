@@ -15,6 +15,7 @@
     .quantity.label-2-r 
       .label Количество:
       span 5
+    .prices__total-mobile.body-1-m 4 995 руб.
 </template>
 
 <script>

@@ -493,6 +493,12 @@ th {
   background: $gray-10  !important;
 }
 
+.input-bg-gray-10 {
+  input {
+    background: $gray-10  !important;
+  }
+}
+
 .d-flex {
   display: flex !important;
 }
@@ -573,6 +579,20 @@ th {
 
 .vm--overlay {
   background: rgba(0, 0, 0, 0.48) !important;
+}
+
+.vm--modal {
+  // top: 0 !important;
+
+  @media (max-width: $s) {
+    margin-bottom: 0 !important;
+    margin-top: auto !important;
+  }
+
+  @media (max-width: $xs) {
+    margin-bottom: 0 !important;
+    margin-top: auto !important;
+  }
 }
 
 /* Scroll Styles */
