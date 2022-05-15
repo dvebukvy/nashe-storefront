@@ -9,6 +9,11 @@
         border-radius: 8px;
         object-fit: contain;
         margin-right: 16px;
+
+        @media (max-width: $xs) {
+            width: 96px;
+            height: 96px;
+        }
     }
 
     .content {
@@ -20,6 +25,23 @@
             display: flex;
             justify-content: space-between;
             padding-bottom: 8px;
+
+            &__total {
+                @media (max-width: $xs) {
+                    display: none;
+                }
+            }
+
+            &__total-mobile {
+                display: none;
+            }
+
+            &__total-mobile {
+                @media (max-width: $xs) {
+                    display: flex;
+                    padding-top: 16px;
+                }
+            }
         }
 
         .name {
