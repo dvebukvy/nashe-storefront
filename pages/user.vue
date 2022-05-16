@@ -176,10 +176,12 @@ export default {
       return breadcrumbs
     },
     modalPosition() {
-      if (window.screen.width <= 768) {
-        return (this.position = -50)
-      } else {
-        return (this.position = 0)
+      if (process.browser) {
+        if (window.screen.width <= 768) {
+          return (this.position = -50)
+        } else {
+          return (this.position = 0)
+        }
       }
     },
   },

@@ -42,10 +42,12 @@ export default {
   },
   computed: {
     screenWidth() {
-      if (window.screen.width <= 768) {
-        return 2
-      } else {
-        return 4
+      if (process.browser) {
+        if (window.screen.width <= 768) {
+          return 2
+        } else {
+          return 4
+        }
       }
     },
   },
