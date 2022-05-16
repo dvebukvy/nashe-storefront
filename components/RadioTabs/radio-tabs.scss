@@ -10,13 +10,14 @@
   }
 
   &__item {
-    padding: 11px 15px;
+    height: 40px;
+    padding: 12px 15px;
     border-radius: 999px;
     background-color: $white;
     border: 1px solid $gray-20;
     cursor: pointer;
     color: $brand-secondary;
-    @include fontSize(14, 16);
+    @include fontSize(14, 15);
     font-weight: 400;
     transition: all 0.3s ease;
 
@@ -24,6 +25,10 @@
       background-color: $gray-10;
       border: 1px solid $brand-primary;
       color: $brand-primary;
+    }
+
+    &:hover {
+      background-color: $gray-10;
     }
   }
 }

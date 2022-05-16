@@ -1,8 +1,8 @@
 <template lang="pug">
 .map-selector
-  .map-selector__close(@click='closeMap')
-    svg-icon.map-selector__close-icon(name='close-16')
   .map-selector__sidebar
+    .map-selector__close(@click='closeMap')
+      svg-icon.map-selector__close-icon(name='close')
     .map-selector__top
       .map-selector__header
         p.map-selector__title Выбор магазина
@@ -12,7 +12,7 @@
         .map-selector__item(v-for='item in 4', :key='item.id')
           .map-selector__item-header
             .map-selector__text.bold Магазин на улице Братьев Луканиных
-            Radio
+            Radio(v-model='selectedShop')
           .map-selector__item-box
             svg-icon.map-selector__icon(name='pin-20')
             .map-selector__box-list
@@ -28,7 +28,7 @@
             .map-selector__box-list
               p.map-selector__text +7 499 703-35-92, доб. 1324
     .map-selector__bottom
-      Button(label='Выбрать')
+      Button(label='Выбрать', :disabled='selectedShop === null')
   .map-selector__map
     Map
 </template>
@@ -51,6 +51,7 @@ export default {
           value: 'yartsevo',
         },
       ],
+      selectedShop: null,
     }
   },
   methods: {

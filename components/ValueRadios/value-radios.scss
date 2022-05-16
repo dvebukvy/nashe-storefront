@@ -9,6 +9,7 @@
     position: relative;
     padding: 12px 15px;
     min-width: 48px;
+    min-height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,10 +44,12 @@
 
   &__value {
     color: $brand-secondary;
-    @include fontSize(14, 16);
+    @include fontSize(14, 15);
     font-weight: 400;
-    background-color: white;
-    z-index: 4;
+    // background-color: white;
+    z-index: 12;
+    user-select: none;
+    pointer-events: none;
   }
 
   &__input {
@@ -67,6 +70,12 @@
 
     &:checked {
       border: 1px solid $brand-primary;
+      background: $gray-10;
+
+      &.value-radios__value {
+        color: $brand-secondary;
+        background-color: $gray-10;
+      }
     }
   }
 }
