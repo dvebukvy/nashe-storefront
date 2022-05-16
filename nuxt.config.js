@@ -6,7 +6,7 @@ export default {
 
   target: 'server',
 
-  ssr: false,
+  ssr: true,
 
   head: {
     title: 'НАШЕ',
@@ -47,5 +47,9 @@ export default {
   components: true,
 
   modules: ['@nuxtjs/axios', '@nuxtjs/style-resources', '@nuxtjs/svg-sprite', 'nuxt-vue-select'],
+
+  build: {
+    extractCSS: true
+  },
 
 }

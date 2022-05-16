@@ -1,25 +1,30 @@
 <template lang="pug">
 .page__content
   .container
-    Breadcrumbs(:data='breadcrumbs', code='23КЛ-2401–201')
+    Breadcrumbs(:data='breadcrumbs')
     Headline(title='Джемперы')
     .category-page
-      .category-page__filters-mobile(:class='{active: filtersOpened}')
-        MobileFilter(:data='filters')      
+      .category-page__filters-mobile(:class='{ active: filtersOpened }')
+        MobileFilter(:data='filters') 
       .category-page__actions
-        Button(label='Категории и фильтры' class='is-filter filtered reverse' icon='filter' width='196px' @click.native='openFilters')
+        Button.is-filter.filtered.reverse(
+          label='Категории и фильтры',
+          icon='filter',
+          width='196px',
+          @click.native='openFilters'
+        )
         Select(
-            style='width: 196px'
-            :data='selector',
-            placeholder='Обычный селект',
-            :searchable='false',
-            :multiple='false',
-            :selectedData='selector[0]'
-          )
+          style='width: 196px',
+          :data='selector',
+          placeholder='Обычный селект',
+          :searchable='false',
+          :multiple='false',
+          :selectedData='selector[0]'
+        )
       .category-page__filters
         CategoryFilter(:data='filters')
       .category-page__content
-        .category-page__selector          
+        .category-page__selector 
           Select(
             :data='selector',
             placeholder='Обычный селект',
@@ -30,7 +35,11 @@
         .category-page__selected
           FilteredItems
         .category-page__list
-          ProductCard(v-for='item in products', :key='item.id', :data='item' class='in-grid')
+          ProductCard.in-grid(
+            v-for='item in products',
+            :key='item.id',
+            :data='item'
+          )
         Pagination
 </template>
 
@@ -64,38 +73,6 @@ export default {
           {
             label: 'Брюки',
             value: 'Брюки',
-          },
-          {
-            label: 'Test',
-            value: 'Test',
-          },
-          {
-            label: 'Test',
-            value: 'Test',
-          },
-          {
-            label: 'Test',
-            value: 'Test',
-          },
-          {
-            label: 'Test',
-            value: 'Test',
-          },
-          {
-            label: 'Test',
-            value: 'Test',
-          },
-          {
-            label: 'Test',
-            value: 'Test',
-          },
-          {
-            label: 'Test',
-            value: 'Test',
-          },
-          {
-            label: 'Test',
-            value: 'Test',
           },
         ],
         colors: [
@@ -681,7 +658,7 @@ export default {
     },
     closeFilters() {
       this.filtersOpened = false
-    }
+    },
   },
 }
 </script>

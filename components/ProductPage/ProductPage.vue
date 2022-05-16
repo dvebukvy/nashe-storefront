@@ -172,7 +172,13 @@ export default {
       this.$modal.show(
         ModalSizes,
         {},
-        { width: '480', scrollable: true, adaptive: true, transition: 'bottom' }
+        {
+          width: '480',
+          scrollable: true,
+          adaptive: true,
+          transition: 'bottom',
+          shiftY: 0,
+        }
       )
     },
   },

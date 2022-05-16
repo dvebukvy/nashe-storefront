@@ -569,10 +569,27 @@ th {
   align-items: flex-start;
   padding: 16px;
   width: 648px;
-  height: 56px;
+  min-height: 56px;
   background: $gray-10;
   border-radius: 8px;
   margin-top: 12px;
+
+  @media (max-width: $s) {
+    width: 100%;
+  }
+}
+
+.accordion__with-radius {
+  border-radius: 8px;
+  background: $gray-10;
+
+  .accordion {
+    border-top: none;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
 }
 
 /* Popup Styles */
