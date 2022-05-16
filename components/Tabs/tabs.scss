@@ -1,5 +1,7 @@
 .tabs {
     display: flex;
+    overflow: hidden;
+    overflow-x: auto;
 
     &__item {
         display: flex;
@@ -25,5 +27,11 @@
         &:hover {
             background: $gray-10;
         }
+
+    }
+
+    &::-webkit-scrollbar {
+        width: 0;
+        display: none;
     }
 }

@@ -11,17 +11,19 @@
       ) {{ data.status }}
   .order-card__body
     .order-data.body-2-r
-      .order-data__delivery
-        svg-icon.order-icon(name='mark')
-        span(v-if='data.deliveryType') {{ data.deliveryType }}
-      .order-data__address(v-if='data.address') {{ data.address }}
-      .order-data__pay
-        svg-icon.order-icon(name='wallet')
-        span(v-if='data.payType') {{ data.payType }}
-      .order-data__pay-status(
-        v-if='data.payStatus !== null',
-        :class='[data.payStatus ? "text-color-green" : "text-color-red"]'
-      ) {{ data.payStatus ? "Оплачен" : "Не оплачен" }}
+      .order-data__item
+        .order-data__delivery
+          svg-icon.order-icon(name='mark')
+          span(v-if='data.deliveryType') {{ data.deliveryType }}
+        .order-data__address(v-if='data.address') {{ data.address }}
+      .order-data__item
+        .order-data__pay
+          svg-icon.order-icon(name='wallet')
+          span(v-if='data.payType') {{ data.payType }}
+        .order-data__pay-status(
+          v-if='data.payStatus !== null',
+          :class='[data.payStatus ? "text-color-green" : "text-color-red"]'
+        ) {{ data.payStatus ? "Оплачен" : "Не оплачен" }}
     .goods-images(v-if='data.images')
       img.image(
         v-for='image in data.images.slice(0, screenWidth)',
@@ -40,10 +42,12 @@ export default {
   },
   computed: {
     screenWidth() {
-      if (window.screen.width <= 768) {
-        return 2
-      } else {
-        return 4
+      if (process.browser) {
+        if (window.screen.width <= 768) {
+          return 2
+        } else {
+          return 4
+        }
       }
     },
   },

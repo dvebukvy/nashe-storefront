@@ -7,6 +7,14 @@
     }
   }
 
+  a {
+    color: $brand-secondary;
+
+    &:hover {
+      color: $brand-primary;
+    }
+  }
+
   &__header {
     padding: 24px 8px;
     // margin: 0 8px;
@@ -16,6 +24,10 @@
     cursor: pointer;
     position: relative;
     transition: color 0.3s ease;
+
+    a {
+      color: $brand-secondary;
+    }
 
     &::after {
       width: calc(100% - 16px);
@@ -27,6 +39,15 @@
       left: 8px;
       opacity: 0;
       transition: opacity 0.3s ease;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      border-bottom: 1px solid transparent;
+      width: 100%;
+      bottom: 0;
+      z-index: 2;
     }
 
     &:hover {
@@ -55,6 +76,16 @@
         &::after {
           opacity: 0;
         }
+      }
+    }
+
+    &.active {
+      #{$this}__link {
+        color: $brand-primary;
+      }
+
+      &::after {
+        opacity: 1;
       }
     }
   }

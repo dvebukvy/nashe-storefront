@@ -1,7 +1,7 @@
 .cart {
     position: absolute;
     top: 60px;
-    right: calc(0% + 292px);
+    right: 60px;
     width: 320px;
     height: 480px;
     filter: drop-shadow(0px 2px 8px rgba(36, 16, 15, 0.12)) drop-shadow(0px 0px 1px rgba(36, 16, 15, 0.24));
@@ -9,6 +9,14 @@
     box-shadow: 0px 2px 8px 0px #24100F1F;
     background-color: #fff;
     z-index: 100;
+
+    @media (max-width: $l) {
+        right: 48px;
+    }
+
+    @media (max-width: $m) {
+        right: 48px;
+    }
 
     &__header {
         display: flex;

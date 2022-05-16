@@ -11,6 +11,7 @@
     justify-content: space-between;
     box-shadow: inset -1px 0px 0px #ece8e5;
     flex-shrink: 0;
+    position: relative;
   }
 
   &__header {
@@ -55,7 +56,7 @@
     display: flex;
     flex-direction: column;
     overflow-y: auto;
-    height: calc(100vh - 220px);
+    height: calc(100vh - 200px);
 
     &::-webkit-scrollbar {
       width: 12px;
@@ -77,6 +78,10 @@
     gap: 16px;
     flex-shrink: 0;
     box-shadow: inset 0px -1px 0px #ECE8E5;
+
+    &:last-child {
+      box-shadow: none;
+    }
   }
 
   &__item-header {
@@ -113,24 +118,14 @@
     position: absolute;
     top: 16px;
     right: 16px;
-    width: 32px;
-    height: 32px;
-    border-radius: 999px;
-    background-color: $gray-10;
+    width: 24px;
+    height: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
     z-index: 101;
-
-    &:hover {
-      background-color: $gray-15;
-    }
-
-    &:active {
-      background-color: $gray-20;
-    }
 
     @media (max-width: $xs) {
       display: none;

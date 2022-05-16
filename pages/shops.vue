@@ -3,7 +3,7 @@
   .container
     Breadcrumbs(:data='breadcrumbs')
     Headline(title='Магазины')
-    .d-flex.justify-content-between.align-items-center
+    .shops__header.d-flex.justify-content-between.align-items-center
       Tabs(:data='cityTabs')
       Switcher(:switch='changeSwitch')
     .store-cards(v-if='switcher === "list"')
@@ -89,6 +89,25 @@ export default {
 </script>
 
 <style lang="scss">
+.shops__header {
+  @media (max-width: $s) {
+    flex-direction: column;
+    .tabs {
+      width: 100%;
+      &__item {
+        min-width: 96px;
+      }
+    }
+    .switcher {
+      margin-top: 24px;
+      width: 100%;
+      label {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
 .store-cards {
   margin-top: 48px;
 }
