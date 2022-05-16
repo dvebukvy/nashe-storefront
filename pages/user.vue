@@ -219,7 +219,7 @@ export default {
       align-items: flex-start;
       padding: 16px 0px;
       position: absolute;
-      width: 312px;
+      min-width: 312px;
       height: 176px;
       background-color: #faf6f2;
       border-radius: 12px;
@@ -241,6 +241,14 @@ export default {
         &.exit {
           color: #d60700;
         }
+      }
+
+      @media (max-width: $l) {
+        min-width: 274px;
+      }
+
+      @media (max-width: $m) {
+        min-width: 299px;
       }
     }
 

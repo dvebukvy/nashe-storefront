@@ -17,6 +17,7 @@ export default {
   data() {
     return {
       settings: {
+        swicher: false,
         suppressScrollY: false,
         suppressScrollX: false,
         wheelPropagation: false,

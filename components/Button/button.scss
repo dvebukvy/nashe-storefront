@@ -148,6 +148,10 @@
       border: 1px solid $gray-20  !important;
       border-radius: 8px !important;
 
+      span {
+        color: $brand-primary  !important;
+      }
+
       &:hover {
         border: 1px solid $gray-20;
         background-color: $gray-20  !important;

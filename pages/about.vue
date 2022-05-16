@@ -111,6 +111,16 @@
           td 100
           td 128
     .heading-3.pt-24.pb-24 Бренд НАШЕ был придуман и запущен в 2017 году
+    .accordion__with-radius
+      Accordion.with-bg(title='Стоимость и сроки доставки')
+        .product-page__accordion-content
+          .body-2-r Стоимость и сроки зависят от способа доставки и вашего региона. <a href='#'>Подробнее по ссылке</a>
+      Accordion.with-bg(title='Как получить заказ?')
+        .product-page__accordion-content
+          .body-2-r Стоимость и сроки зависят от способа доставки и вашего региона. <a href='#'>Подробнее по ссылке</a>
+      Accordion.with-bg(title='Как будет упакован заказ?')
+        .product-page__accordion-content
+          .body-2-r Стоимость и сроки зависят от способа доставки и вашего региона. <a href='#'>Подробнее по ссылке</a>
 </template>
 
 <script>
