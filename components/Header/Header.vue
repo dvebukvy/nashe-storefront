@@ -10,12 +10,12 @@
             nuxt-link.header__sublink(to='/about') О компании
             nuxt-link.header__sublink(to='/shops') Магазины
             nuxt-link.header__sublink(to='/contacts') Контакты
-            nuxt-link.header__sublink(to='/') Блог
             a.header__sublink-badge(href='/', target='_blanc') Оптовый сайт
           Contact.small
     .header__line
       .container
-        CartDropdown(v-if='showCart', v-click-outside='closeCart')
+        span.cart-body(@mouseover='cartOver = true', @mouseleave='closeCart')
+          CartDropdown(v-if='showCart')
         .header__bottom
           .header__links
             nuxt-link(to='/')
@@ -34,7 +34,10 @@
             .header__action-button
               nuxt-link(to='/favorites')
                 svg-icon.header__action-icon(name='favorite-24')
-            .header__action-button(@click='showCart = !showCart')
+            .header__action-button(
+              @mouseover='showCartBody',
+              @mouseleave='closeCart'
+            )
               span.header__action-quantity 3
               svg-icon.header__action-icon(name='cart-24')
   .header__mobile
@@ -44,7 +47,10 @@
       .header__action-button(@click='openMenu')
         svg-icon.header__action-icon(name='list-24')
       .header__action-button 
-        svg-icon.header__action-icon(name='search-24')
+        svg-icon.header__action-icon(
+          name='search-24',
+          @click='openPopupSearch'
+        )
     .header__block
       nuxt-link(to='/')
         svg-icon.header__logo(name='logotype')
@@ -64,6 +70,8 @@ export default {
     return {
       menuVisible: false,
       showCart: false,
+      cartOver: false,
+      showBody: false,
       navMenu: [
         {
           title: 'Женщинам',
@@ -636,10 +644,21 @@ export default {
         }
       )
     },
-    closeCart() {
-      if (this.showCart) {
-        this.showCart = false
+    showCartBody() {
+      if (!this.showCart && !this.showBody) {
+        this.showCart = true
+        this.showBody = true
       }
+    },
+    closeCart() {
+      this.cartOver = false
+      setTimeout(() => {
+        if (this.showCart && this.showBody && !this.cartOver) {
+          this.showCart = false
+          this.showBody = false
+          this.cartOver = false
+        }
+      }, 500)
     },
   },
   watch: {

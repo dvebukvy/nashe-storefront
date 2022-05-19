@@ -5,33 +5,35 @@
     Headline(title='Избранное')
     .favorite-page
       .favorite-page__actions
-        .favorite-page__selector 
-          Select(
-            :data='selector',
-            placeholder='Обычный селект',
-            :searchable='false',
-            :multiple='false',
-            :selectedData='selector[0]'
-          )
+        .favorite-page__selector
+          client-only
+            Select(
+              :data='selector',
+              placeholder='Обычный селект',
+              :searchable='false',
+              :multiple='false',
+              :selectedData='selector[0]'
+            )
         .favorite-page__mobile-selector(@click='openSelector') 
-          Select(
-            style='pointer-events:none'
-            :data='selector',
-            placeholder='Обычный селект',
-            :searchable='false',
-            :multiple='false',
-            :selectedData='selector[0]'
-          )
+          client-only
+            Select(
+              style='pointer-events: none',
+              :data='selector',
+              placeholder='Обычный селект',
+              :searchable='false',
+              :multiple='false',
+              :selectedData='selector[0]'
+            )
         .favorite-page__mobile-selector-small(@click='openSelector') 
-          Button(icon='stripes' class='delete')
+          Button.delete(icon='stripes')
         .favorite-page__select(:class='{ opened: selectorOpened }')
           MobileSelect(
             :data='selector',
             :selectedData='selector[0]',
             v-model='selected'
           )
-        Button(label='Очистить избранное' icon='trash'  class='reverse delete ')
-        
+        Button.reverse.delete(label='Очистить избранное', icon='trash')
+
       .favorite-page__fail(v-if='fail')
         img.favorite-page__fail-icon(src='/icons/favorite-fail.svg')
         p.favorite-page__text Вы не добавили ни одного товара в избранное
@@ -455,14 +457,13 @@ export default {
     openSelector() {
       this.selectorOpened = true
     },
-    closeSelector() {      
+    closeSelector() {
       this.selectorOpened = false
     },
-
   },
   mounted() {
     this.$nuxt.$on('closeMobileSelect', this.closeSelector)
-  }
+  },
 }
 </script>
 
@@ -474,6 +475,10 @@ export default {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     @media (max-width: $m) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    @media (max-width: $s) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 32px 16px;
     }
     @media (max-width: $xs) {
       grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -490,7 +495,7 @@ export default {
   }
 
   &__selector {
-    width: 196px;    
+    width: 196px;
     @media (max-width: $s) {
       display: none;
     }
@@ -522,16 +527,29 @@ export default {
     z-index: -1;
     pointer-events: none;
     opacity: 0;
-    transform: translateY(24px);
+    // transform: translateY(24px);
     width: 100vw;
     height: 100vh;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    // transition: transform 0.3s ease, opacity 0.3s ease;
     display: none;
+    .mobile-select__area {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .mobile-select__content {
+      transform: translateY(100%);
+      transition: transform 0.5s ease;
+    }
     &.opened {
       z-index: 100;
       opacity: 1;
-      transform: translateY(0);
       pointer-events: all;
+      .mobile-select__area {
+        opacity: 1;
+      }
+      .mobile-select__content {
+        transform: translateY(0);
+      }
     }
     @media (max-width: $s) {
       display: block;
@@ -549,6 +567,16 @@ export default {
     display: flex;
     margin-bottom: 24px;
     justify-content: space-between;
+    @media (max-width: $s) {
+      margin-bottom: 0;
+    }
+    @media (max-width: $xs) {
+      margin-bottom: 24px;
+      .reverse.delete {
+        width: 100%;
+        margin-left: 8px;
+      }
+    }
   }
 }
 </style>

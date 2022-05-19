@@ -1,5 +1,6 @@
 .tabs {
     display: flex;
+    flex-wrap: wrap;
     overflow: hidden;
     overflow-x: auto;
 
@@ -9,23 +10,27 @@
         justify-content: center;
         align-items: center;
         padding: 12px 16px;
-        width: 98px;
+        min-width: 96px;
         height: 40px;
         background: $white;
         border: 1px solid $gray-20;
         border-radius: 999px;
         margin-right: 8px;
         cursor: pointer;
-        transition: background 0.5s ease;
+        transition: all 0.3s ease;
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        margin-bottom: 8px;
 
         &.active {
             background: $gray-10;
             border: 1px solid $brand-primary;
             border-radius: 999px;
+            color: $brand-primary;
         }
 
         &:hover {
-            background: $gray-10;
+            border-color: $brand-primary;
         }
 
     }
@@ -33,5 +38,14 @@
     &::-webkit-scrollbar {
         width: 0;
         display: none;
+    }
+
+    @media (max-width: $m) {
+        margin-right: 32px;
+    }
+
+    @media (max-width: $s) {
+        margin-right: 48px;
+        flex-wrap: nowrap;
     }
 }

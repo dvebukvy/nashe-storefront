@@ -1,14 +1,18 @@
 <template lang="pug">
 .page__content
-  .container
-    SliderMain
-    SectionMain
+  .container.no-paddings-all
+    SliderMain.paddings
+    SectionMain(style='padding-top: 64px')
       CategoriesMain 
-    SectionMain(title='Новинки')
-      Slider(:data='poducts_new' object='ProductCard')
-    SectionMain(title='Бестселлеры')
-      Slider(:data='poducts_new' object='ProductCard')
-    SectionMain(title='Блог' :button='{label: "Все статьи", link: "blog"}')
+    SectionMain.paddings(title='Новинки')
+      Slider(:data='poducts_new', object='ProductCard')
+    SectionMain.paddings(title='Бестселлеры')
+      Slider(:data='poducts_new', object='ProductCard')
+    SectionMain.paddings(
+      v-if='false',
+      title='Блог',
+      :button='{ label: "Все статьи", link: "blog" }'
+    )
       BlogMain
 </template>
 

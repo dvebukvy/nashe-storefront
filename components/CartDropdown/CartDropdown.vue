@@ -2,10 +2,11 @@
 .cart
   .cart__header
     .body-2-m Корзина
-    span.quantity 3
+    span.quantity
+      .text 3
   vue-custom-scrollbar.cart__body(:settings='settings')
     .items
-      .item(v-for='item in 6')
+      nuxt-link.item(v-for='item in 6', to='/product/slug', :key='item')
         img.image(src='/img/product-card-1.jpg')
         .content
           .price.body-2-m 999 руб.

@@ -4,10 +4,10 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding-top: 64px;
+  padding-top: 128px;
 
   @media (max-width: $xs) {
-    padding-top: 48px;
+    padding-top: 96px;
   }
 
   &__success {

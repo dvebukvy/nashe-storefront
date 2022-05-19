@@ -4,6 +4,14 @@
   border-bottom: 1px solid $gray-20;
   width: 100%;
 
+  &:first-child {
+    border-top: none;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+
   &.padding {
     #{$this}__content {
       margin-top: 8px;
@@ -46,6 +54,14 @@
   }
 
   &__body {}
+
+  &__accordion-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 8px;
+    padding-bottom: 24px;
+  }
 
   &.with-bg {
     padding-left: 16px;

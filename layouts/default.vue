@@ -1,5 +1,6 @@
 <template lang='pug'>
-vueCustomScrollbar.page(:settings='settings')
+//- .page(:settings='settings')
+.page
   header.page__header
     Header
   main.page__body

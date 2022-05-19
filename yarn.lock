@@ -10682,7 +10682,7 @@
   "resolved" "https://registry.npmjs.org/vue-router/-/vue-router-3.5.2.tgz"
   "version" "3.5.2"
 
-"vue-select@^3.2.0":
+"vue-select@^3.18.3", "vue-select@^3.2.0":
   "integrity" "sha512-nKmwxEDO4RRoZ6lWkkVE2bpgne7IJSRzSh1pIawLI7dJLZbtJuSgA0xGaLrT0pUp+JYHBDul242PwOBDHi28vg=="
   "resolved" "https://registry.npmjs.org/vue-select/-/vue-select-3.18.3.tgz"
   "version" "3.18.3"

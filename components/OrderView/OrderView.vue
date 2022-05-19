@@ -1,6 +1,6 @@
 <template lang="pug">
-.order-view
-  .breadcrumb(@click='back')
+.order-view(v-if='data')
+  span.breadcrumb(@click='back')
     svg-icon.icon(name='chevron-left-16')
     span.label-2-r К списку заказов
   .header
@@ -27,7 +27,10 @@
         .label Оплата
         .content
           span Оплата онлайн
-          span.text-color-red Не оплачен
+          span.text-color-red(
+            v-if='data.payStatus !== null',
+            :class='[data.payStatus ? "text-color-green" : "text-color-red"]'
+          ) {{ data.payStatus ? "Оплачен" : "Не оплачен" }}
       .order-info__item
         .label Стоимость доставки
         .content

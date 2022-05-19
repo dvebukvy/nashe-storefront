@@ -1,7 +1,7 @@
 <template lang="pug">
 .registration
   .registration__success(v-if='success && !trueSucccess')
-    h2.registration__title Регистрация
+    h2.registration__title.heading-1 Регистрация
     p.registration__text Для активации аккаунта перейдите по ссылке из письма, которое отправлено на указанную электронную почту
     .registration__success-button
       Button.outline(
@@ -9,7 +9,7 @@
         @click.native='getSuccess'
       )
   .registration__success(v-if='trueSucccess')
-    h2.registration__title Успешная регистрация
+    h2.registration__title.heading-1 Успешная регистрация
     p.registration__text Поздравляем, вы успешно подтвердили свой аккаунт
     .registration__success-button
       Button.outline(
@@ -17,7 +17,7 @@
         @click.native='linkTo("/")'
       )
   .registration__main(v-if='!success')
-    h2.registration__title Регистрация
+    h2.registration__title.heading-1 Регистрация
     .registration__item
       p.registration__text Электронная почта
       Input.background(type='email', v-model='form.email')

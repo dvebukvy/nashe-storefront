@@ -16,8 +16,8 @@ form.category-filter
   Accordion.padding(title='Коллекция', :opened='true')
     ValueCheckboxes(:data='data.collections')
   .category-filter__toggle
-    .category-filter__title Товары со скидкой
-    Toggle
+    //- .category-filter__title Товары со скидкой
+    Toggle(label='Товары со скидкой', :labelLeft='true')
 </template>
 
 <script>

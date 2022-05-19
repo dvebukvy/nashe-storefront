@@ -1,5 +1,5 @@
 <template lang='pug'>
-.select 
+.select
   v-select(
     :searchable='searchable',
     :multiple='multiple',
@@ -62,19 +62,19 @@ export default {
     }
   },
   computed: {
-    selected() {          
+    selected() {
       if (this.selectedData) {
         if (this.multiple) {
           let array = []
-          this.selectedData.forEach(element => {
+          this.selectedData.forEach((element) => {
             array.push(this.data.find((el) => el.value === element.value))
-          });
+          })
           return array
         } else {
           return this.selectedData
-        }        
+        }
       } else {
-        return 
+        return
       }
     },
   },
@@ -84,45 +84,49 @@ export default {
   },
 
   methods: {
-    updateValue(option) { 
-      console.log(option);
+    updateValue(option) {
+      console.log(option)
       if (option) {
         if (this.multiple) {
-        this.selectedValues = []
-        this.toBackend = []   
-        option.forEach((element) => {
-          this.selectedValues.push({ label: element.label, value: element.value }) 
-        })
-        
-        this.selectedValues.forEach((el) => {          
-          this.toBackend.push(el.value)
-        })
-        this.$emit('input', this.toBackend)
-      } else {
-        this.selectedValues = {label: option.label, value: option.value}
-        this.$emit('input', option ? option.value : '')
-        if (this.colorSelect && option) {
-          this.color = option.value
+          this.selectedValues = []
+          this.toBackend = []
+          option.forEach((element) => {
+            this.selectedValues.push({
+              label: element.label,
+              value: element.value,
+            })
+          })
+
+          this.selectedValues.forEach((el) => {
+            this.toBackend.push(el.value)
+          })
+          this.$emit('input', this.toBackend)
+        } else {
+          this.selectedValues = { label: option.label, value: option.value }
+          this.$emit('input', option ? option.value : '')
+          if (this.colorSelect && option) {
+            this.color = option.value
+          }
         }
-      }
-      }   else {
+      } else {
         this.selectedValues = null
         this.toBackend = null
         this.$emit('input', null)
-      }  
-      
+      }
     },
-    chekToggle(option) {    
+    chekToggle(option) {
       if (this.selectedValues) {
         if (this.selectedValues.find((el) => el.value === option.value)) {
-          let x = this.selectedValues.findIndex((el) => el.value === option.value)
-          console.log(x);
+          let x = this.selectedValues.findIndex(
+            (el) => el.value === option.value
+          )
+          console.log(x)
           setTimeout(() => {
             this.selectedValues.splice(x, 1)
             this.toBackend.splice(x, 1)
-          }, 100)          
+          }, 100)
         }
-      }   
+      }
     },
   },
 }

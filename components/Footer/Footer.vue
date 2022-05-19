@@ -68,6 +68,7 @@
       a.footer__two-letters(href='https://dvebukvy.ru/', target='_blanc')
         svg-icon(name='dvebukvy')
         .footer__text «Две буквы»
+    CookieInfo
 </template>
 
 

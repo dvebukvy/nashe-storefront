@@ -31,6 +31,10 @@
       background-color: $brand-primary;
       opacity: 0;
     }
+
+    &:hover {
+      border-color: $gray-30;
+    }
   }
 
   &__tag {

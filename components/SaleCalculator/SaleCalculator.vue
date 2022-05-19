@@ -12,7 +12,7 @@
       .sale-calculator__progress(
         :style='"width:" + progressStatus.percent + "%"'
       )
-    p.sale-calculator__text Добавьте в корзину товары ещё на {{ progressStatus.totalLeft }} рублей и получите скидку 15% на весь заказ
+    p.sale-calculator__text.body-3-r Добавьте в корзину товары ещё на {{ progressStatus.totalLeft }} рублей и получите скидку 15% на весь заказ
     nuxt-link.sale-calculator__link(to='/') Подробнее про систему скидок
 </template>
 
@@ -28,9 +28,9 @@ export default {
   computed: {
     progressStatus() {
       let quantity = this.$store.state.cart.quantity
-      console.log(quantity)
+      // console.log(quantity)
       let totalLeft = this.end - quantity * this.price
-      console.log(totalLeft)
+      // console.log(totalLeft)
       let percent = ((quantity * this.price) / this.end) * 100
       let summ = quantity * this.price
       let object = { percent: percent, summ: summ, totalLeft: totalLeft }

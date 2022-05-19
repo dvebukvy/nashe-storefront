@@ -2,7 +2,6 @@
     width: 100%;
     border-radius: 12px;
     margin-bottom: 16px;
-    cursor: pointer;
 
     &__header {
         display: flex;
@@ -10,6 +9,7 @@
         justify-content: space-between;
         box-shadow: inset 0px -1px 0px $gray-20;
         padding: 20px 24px;
+        cursor: pointer;
 
         .order-info {
             display: flex;
@@ -89,7 +89,7 @@
                 }
 
                 @media (max-width: $xs) {
-                    margin-bottom: 16px;
+                    margin-bottom: 24px;
                 }
             }
 
@@ -99,6 +99,14 @@
 
             &__pay-status {
                 padding-left: 28px;
+
+                @media (max-width: $s) {
+                    margin-bottom: 0;
+                }
+
+                @media (max-width: $xs) {
+                    margin-bottom: 24px;
+                }
             }
 
             @media (max-width: $s) {
@@ -108,6 +116,8 @@
                 .order-data__item {
                     width: 50%;
                 }
+
+                margin-bottom: 32px;
             }
 
             @media (max-width: $xs) {
@@ -124,12 +134,17 @@
             display: flex;
             align-items: center;
 
+            span {
+                width: 80px;
+                height: 80px;
+                margin-right: 8px;
+            }
+
             .image {
                 width: 80px;
                 height: 80px;
                 border-radius: 8px;
                 object-fit: contain;
-                margin-right: 8px;
                 cursor: pointer;
             }
 
@@ -148,33 +163,15 @@
                 color: $brand-secondary;
                 cursor: pointer;
             }
-
-            @media (max-width: 1156px) {
-                padding-top: 12px;
-            }
-
-            @media (max-width: $s) {
-                padding-top: 12px;
-
-                .image,
-                .another-goods {
-                    margin-top: 12px;
-                }
-            }
-
-            @media (max-width: $xs) {
-                padding-top: 12px;
-
-                .image,
-                .another-goods {
-                    margin-top: 12px;
-                }
-            }
         }
 
         @media (max-width: 1156px) {
             flex-direction: column;
             align-items: flex-start;
+
+            .order-data {
+                margin-bottom: 32px;
+            }
         }
 
         @media (max-width: $s) {
@@ -185,6 +182,10 @@
         @media (max-width: $xs) {
             flex-direction: column;
             padding-right: 0;
+
+            .order-data {
+                margin-bottom: 0px;
+            }
         }
     }
 

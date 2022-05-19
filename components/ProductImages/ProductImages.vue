@@ -6,14 +6,17 @@
         v-for='(item, index) in data',
         :key='index'
       )
-        img.product-images__mobile-img(:src='item', @click='openModalImages(index)' ) 
+        img.product-images__mobile-img(
+          :src='item',
+          @click='openModalImages(index)'
+        ) 
     .product-images__pagination
   .product-images__grid(:class='computedGrid')
     img.product-images__image(
       :src='item',
       v-for='(item, index) in data',
       :key='index',
-      @click='openModalImages(index)'
+      @click='openModalImages(index)',
       :class='"grid" + index'
     )
   .product-images__slider(v-if='opened')
@@ -75,7 +78,7 @@ export default {
       if (this.data.length === 9) {
         return 'nine'
       }
-    }
+    },
   },
   methods: {
     openModalImages(index) {
@@ -85,9 +88,11 @@ export default {
         this.initSwiper()
         console.log(this.swiper)
       }, 0)
+      document.querySelector('.page').classList.add('overflow-hidden')
     },
     close() {
       this.opened = false
+      document.querySelector('.page').classList.remove('overflow-hidden')
     },
     initSwiper() {
       const swiper = new Swiper(this.$refs.container, {
@@ -120,6 +125,7 @@ export default {
             slidesPerView: 2,
           },
         },
+        loop: true,
         pagination: {
           el: '.product-images__pagination',
           type: 'bullets',
@@ -133,8 +139,7 @@ export default {
       if (window.innerWidth <= 1024) {
         setTimeout(() => {
           this.initMobileSwiper()
-        }, 500);
-        
+        }, 500)
       }
     })
     if (window.innerWidth <= 1024) {
@@ -144,4 +149,11 @@ export default {
 }
 </script>
 
-<style lang='scss' src='./product-images.scss'></style>
+<style lang='scss' src='./product-images.scss'>
+</style>
+
+<style>
+.overflow-hidden {
+  overflow: hidden !important;
+}
+</style>

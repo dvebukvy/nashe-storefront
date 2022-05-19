@@ -1,6 +1,6 @@
 <template lang="pug">
 .order-card.bg-gray-10(v-if='data')
-  .order-card__header
+  .order-card__header(@click='openDetail(data)')
     .order-info
       .order-info__number.title-1-m(v-if='data.number') {{ data.number }}
       .order-info__date.body-2-r(v-if='data.date') от {{ data.date }}
@@ -25,10 +25,9 @@
           :class='[data.payStatus ? "text-color-green" : "text-color-red"]'
         ) {{ data.payStatus ? "Оплачен" : "Не оплачен" }}
     .goods-images(v-if='data.images')
-      img.image(
-        v-for='image in data.images.slice(0, screenWidth)',
-        :src='image'
-      )
+      span(v-for='image in data.images.slice(0, screenWidth)', :key='image.id')
+        nuxt-link(to='/product/slug')
+          img.image(:src='image')
       .another-goods.label-3-r(
         v-if='data.images && data.images.length >= screenWidth'
       ) И ещё 24 товара
@@ -36,7 +35,7 @@
 
 <script>
 export default {
-  props: ['data', 'link'],
+  props: ['data', 'link', 'openDetail'],
   data() {
     return {}
   },

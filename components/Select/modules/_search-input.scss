@@ -49,7 +49,7 @@
 .vs--unsearchable {
   .vs__search {
     opacity: 1;
-    display: none;
+    // display: none;
   }
 
   &:not(.vs--disabled) .vs__search:hover {

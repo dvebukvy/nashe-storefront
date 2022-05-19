@@ -2,7 +2,7 @@
   $this: &;
   position: relative;
   display: inline-block;
-  width: 36px;
+  width: 100%;
   height: 20px;
   flex-shrink: 0;
   cursor: pointer;
@@ -37,17 +37,20 @@
     display: flex;
     flex-shrink: 0;
     top: 0;
-    left: 40px;
-    color: $gray-100;
-    @include fontSize(14, 20);
-    font-weight: 400;
+    left: 0;
+    // color: $gray-100;
 
     &.disabled {
       color: $gray-50;
     }
+
+    &.left {
+      left: 40px;
+    }
   }
 
   &__slider {
+    width: 36px;
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -59,6 +62,7 @@
     -webkit-transition: 0.4s;
     transition: 0.4s;
     border-radius: 999px;
+    margin-left: auto;
 
     &::before {
       position: absolute;

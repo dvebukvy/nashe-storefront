@@ -9,6 +9,11 @@
     border: 1px solid $gray-20;
     border-radius: 50%;
     position: relative;
+    transition: border 0.3s ease;
+
+    &:hover {
+      // border-color: $brand-primary;
+    }
   }
 
   &__input {
@@ -23,9 +28,11 @@
     border: 1px solid $white;
     border-radius: 50%;
 
+    &:hover {
+      border-color: $brand-primary;
+    }
 
     &:checked {
-
       border: 1px solid $brand-primary;
     }
   }

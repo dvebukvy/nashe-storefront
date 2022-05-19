@@ -29,7 +29,8 @@
             :to='category.link',
             v-for='(category, index) in data.categories',
             :key='index',
-            @mouseover.native='setIndex(index)'
+            @mouseover.native='setIndex(index)',
+            :class='{ active: activeIndex === index }'
           )
             .nav-item__link {{ category.title }}
             svg-icon.nav-item__icon(name='chevron-right-20')

@@ -65,6 +65,10 @@
     flex-shrink: 0;
     height: 480px;
     position: relative;
+
+    @media (max-width: $s) {
+      height: 400px;
+    }
   }
 
   &__image {
@@ -138,8 +142,9 @@
   &__pagination {
     width: 100% !important;
     height: 12px;
-    position: absolute;
-    bottom: -24px;
+    // position: absolute;
+    // bottom: -24px;
+    margin-top: 24px;
 
     align-items: center;
     display: flex;
@@ -171,5 +176,30 @@
     width: 10px;
     height: 10px;
     flex-shrink: 0;
+  }
+
+  &.paddings {
+    padding-left: 60px;
+    padding-right: 60px;
+
+    @media (max-width: $l) {
+      padding-left: 48px;
+      padding-right: 48px;
+    }
+
+    @media (max-width: $m) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    @media (max-width: $s) {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    @media (max-width: $xs) {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
   }
 }

@@ -132,13 +132,13 @@
             .product-page__box
               svg-icon.product-page__icon(name='shirt')
               p.product-page__text В магазин или пункт выдачи от 200 ₽
-            nuxt-link.product-page__link(to='/') Условия бесплатной доставки
+            nuxt-link.product-page__link.body-2-r(to='/') Условия бесплатной доставки
       Accordion(title='Наличие в магазинах')
         .product-page__accordion-content
           .product-page__box
             svg-icon.product-page__icon(name='refresh')
             p.product-page__text Бесплатный и удобный возврат товаров
-          nuxt-link.product-page__link(to='/') Условия возврата
+          nuxt-link.product-page__link.body-2-r(to='/') Условия возврата
 </template>
 
 

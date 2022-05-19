@@ -1,5 +1,5 @@
 <template lang="pug">
-nuxt-link.product-card(to='/product/slug')
+nuxt-link.product-card(to='/product/slug', :event='disabled ? "" : "click"')
   .product-card__images
     .product-card__sections(
       :style='"grid-template-columns: repeat(" + data.images.length + ", minmax(0, 1fr))"'
@@ -24,9 +24,18 @@ nuxt-link.product-card(to='/product/slug')
         :class='{ active: activeIndex === index }'
       )
     .product-card__badges
-      Badge(:label='item', v-for='item in data.badges', :key='item.id' v-if="data.badges")
-      Badge(:label='data.sale', :sale='true' v-if="data.sale")
-    .product-card__favorires
+      Badge(
+        :label='item',
+        v-for='item in data.badges',
+        :key='item.id',
+        v-if='data.badges'
+      )
+      Badge(:label='data.sale', :sale='true', v-if='data.sale')
+    .product-card__favorires(
+      @click='addFavorite',
+      @mouseover='disabled = true',
+      @mouseleave='disabled = false'
+    )
       FavoriteButton(:active='data.inFavorite')
   .product-card__prices
     p.product-card__price(:class='{ new: data.priceOld }') {{ data.price }} руб.
@@ -48,6 +57,7 @@ export default {
   data() {
     return {
       activeIndex: 0,
+      disabled: false,
     }
   },
   computed: {
@@ -62,6 +72,9 @@ export default {
   methods: {
     setIndex(index) {
       this.activeIndex = index
+    },
+    addFavorite() {
+      console.log('Add Favorite Event')
     },
   },
 }

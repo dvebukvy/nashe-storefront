@@ -30,16 +30,20 @@
             justify-content: center;
             align-items: center;
             padding: 0px;
-            width: 25px;
-            height: 25px;
+            min-width: 24px;
+            height: 20px;
             background: #CF643F;
-            border: 2px solid #FFFFFF;
+            // border: 2px solid #FFFFFF;
             border-radius: 999px;
             font-weight: 500;
             font-size: 12px;
             line-height: 16px;
             color: #fff;
             margin-left: 6px;
+
+            .text {
+                padding: 2px 4px;
+            }
         }
     }
 
@@ -65,10 +69,12 @@
                 .content {
                     .price {
                         margin-bottom: 4px;
+                        color: $brand-secondary;
                     }
 
                     .name {
                         margin-bottom: 8px;
+                        color: $brand-secondary;
                     }
 
                     .size {
@@ -78,6 +84,14 @@
 
                 &:last-child {
                     padding-bottom: 0;
+                }
+
+                &:hover {
+                    .content {
+                        .name {
+                            color: $brand-primary;
+                        }
+                    }
                 }
             }
         }

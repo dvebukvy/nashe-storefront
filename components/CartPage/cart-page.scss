@@ -5,6 +5,7 @@
 
   @media (max-width: $m) {
     grid-template-columns: 8fr 4fr;
+    gap: 40px;
   }
 
   @media (max-width: $s) {
@@ -43,6 +44,11 @@
 
     &+& {
       padding-top: 24px;
+    }
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
     }
   }
 
@@ -115,9 +121,25 @@
     }
   }
 
+  a.cart-page__image {
+    min-width: 144px;
+    min-height: 144px;
+
+    @media (max-width: $xs) {
+      min-width: 96px;
+      min-height: 96px;
+    }
+  }
+
   &__image {
     width: 144px;
     height: 144px;
+    border-radius: 8px;
+
+    @media (max-width: $xs) {
+      width: 96px;
+      height: 96px;
+    }
   }
 
   &__box {
@@ -134,7 +156,7 @@
   &__select {
     width: 96px;
 
-    @media (max-width: $xs) {
+    @media (max-width: $s) {
       display: none;
     }
   }
@@ -143,7 +165,7 @@
     width: 128px;
     display: none;
 
-    @media (max-width: $xs) {
+    @media (max-width: $s) {
       display: block;
     }
   }
@@ -189,7 +211,7 @@
   &__counter {
     display: block;
 
-    @media (max-width: $xs) {
+    @media (max-width: $s) {
       display: none;
     }
   }
@@ -198,7 +220,7 @@
     display: none;
     max-width: 128px;
 
-    @media (max-width: $xs) {
+    @media (max-width: $s) {
       display: block;
     }
   }
@@ -206,9 +228,34 @@
   &__delete {
     display: none;
     margin-top: 16px;
+    padding: 4px 0;
 
     @media (max-width: $xs) {
       display: block;
+    }
+  }
+
+  &__text {
+    &.quantity {
+      @media (max-width: $m) {
+        display: none;
+      }
+
+      @media (max-width: $s) {
+        display: flex;
+      }
+
+      &__mobile {
+        display: none;
+
+        @media (max-width: $m) {
+          display: flex;
+        }
+
+        @media (max-width: $s) {
+          display: none;
+        }
+      }
     }
   }
 }

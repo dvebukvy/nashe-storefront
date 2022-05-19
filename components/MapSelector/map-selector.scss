@@ -130,6 +130,12 @@
     @media (max-width: $xs) {
       display: none;
     }
+
+    &:hover {
+      .icon {
+        color: $brand-primary;
+      }
+    }
   }
 
   &__close-icon {

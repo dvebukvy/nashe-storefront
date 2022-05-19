@@ -1,7 +1,11 @@
 <template lang="pug">
 .popup
   .popup__search
-    InputSearch(v-model='searchText', :data='searchText')
+    InputSearch(
+      v-model='searchText',
+      :data='searchText',
+      @keyup.native.enter='result'
+    )
   .popup__results
     .body(v-if='!searchText')
       .body__title Актуальное
@@ -22,10 +26,10 @@
         .item__found(v-for='item in 6')
           img.image(src='/img/product-card-1.jpg')
           .content
-            span.price 999 руб.
-            span.desc Джемпер однотонный с круглой горловиной
+            span.price.body-1-m 999 руб.
+            span.desc.body-2-r Джемпер однотонный с круглой горловиной
     .footer(v-if='searchText && !searchResult')
-      Button(label='Смотреть все результаты')
+      Button(label='Смотреть все результаты', @click.native='result')
 </template>
 
 <script>
@@ -53,6 +57,13 @@ export default {
       if (item) {
         this.searchText = item
       }
+    },
+    result() {
+      this.$router.push({
+        path: '/search',
+        query: { q: this.q },
+      })
+      this.$emit('close')
     },
   },
 }

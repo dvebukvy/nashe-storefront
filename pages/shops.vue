@@ -3,7 +3,7 @@
   .container
     Breadcrumbs(:data='breadcrumbs')
     Headline(title='Магазины')
-    .shops__header.d-flex.justify-content-between.align-items-center
+    .shops__header.d-flex.justify-content-between
       Tabs(:data='cityTabs')
       Switcher(:switch='changeSwitch')
     .store-cards(v-if='switcher === "list"')
@@ -110,9 +110,16 @@ export default {
 }
 .store-cards {
   margin-top: 48px;
+
+  @media (max-width: $s) {
+    margin-top: 32px;
+  }
 }
 .map {
   margin-top: 48px;
   height: 660px !important;
+  @media (max-width: $s) {
+    margin-top: 32px;
+  }
 }
 </style>

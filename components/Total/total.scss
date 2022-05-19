@@ -46,4 +46,8 @@
       @include fontSize(18, 24);
     }
   }
+
+  @media (max-width: $xs) {
+    padding: 16px;
+  }
 }

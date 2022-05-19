@@ -2,7 +2,7 @@
 .page__content
   .container__content-page
     Breadcrumbs(:data='breadcrumbs')
-    .heading-1.pb-12 Бренд НАШЕ был придуман и запущен в 2017 году
+    .heading-1.mb-12 Бренд НАШЕ был придуман и запущен в 2017 году
     .body-1-r Если у вас возникли вопросы <b>о нашей продукции</b> или <i>возможном сотрудничестве</i>, напишите нам на электронную почту <a href='mailto:sale@nashe.online'>sale@nashe.online</a> или свяжитесь по номеру <a href='tel:+74812299600'>+7 4812 29-96-00</a>
     ul.list-icons.body-1-r
       li нет минимальной суммы заказа;
@@ -18,18 +18,18 @@
       li предоплаченный заказ можно получить при предъявлении документа, удостоверяющего личность того, на кого он оформлен;
       li возможен частичный отказ от заказа при 100% предопате.
     .callout.body-1-r Оплата курьеру возможна только наличными
-    .heading-2.pt-32.pb-8 Бренд НАШЕ был придуман и запущен в 2017 году
+    .heading-2.mt-32.mb-8 Бренд НАШЕ был придуман и запущен в 2017 году
     .body-1-r Если у вас возникли вопросы <b>о нашей продукции</b> или <i>возможном сотрудничестве</i>, напишите нам на электронную почту <a href='mailto:sale@nashe.online'>sale@nashe.online</a> или свяжитесь по номеру <a href='tel:+74812299600'>+7 4812 29-96-00</a>
-    .heading-3.pt-24.pb-8 Бренд НАШЕ был придуман и запущен в 2017 году
+    .heading-3.mt-24.mb-8 Бренд НАШЕ был придуман и запущен в 2017 году
     .body-1-r Если у вас возникли вопросы <b>о нашей продукции</b> или <i>возможном сотрудничестве</i>, напишите нам на электронную почту <a href='mailto:sale@nashe.online'>sale@nashe.online</a> или свяжитесь по номеру <a href='tel:+74812299600'>+7 4812 29-96-00</a>
-    figure.pt-16.pb-24
+    figure.mt-16.mb-24
       img(src='/img/content-page-1.jpg')
-      figcaption.body-3-r.text-color-gray-50.pt-8 Caption
-    .heading-1.pb-12 Бренд НАШЕ был придуман и запущен в 2017 году
-    figure.pt-16
+      figcaption.body-3-r.text-color-gray-50.mt-8 Caption
+    .heading-1.mb-12 Бренд НАШЕ был придуман и запущен в 2017 году
+    figure.mt-16
       img(src='/img/content-page-2.jpg')
-      figcaption.body-3-r.text-color-gray-50.pt-8 Caption
-    .heading-2.pt-32.pb-24 Бренд НАШЕ был придуман и запущен в 2017 году
+      figcaption.body-3-r.text-color-gray-50.mt-8 Caption
+    .heading-2.mt-32.mb-24 Бренд НАШЕ был придуман и запущен в 2017 году
     table
       thead
         tr
@@ -110,16 +110,16 @@
           td 120
           td 100
           td 128
-    .heading-3.pt-24.pb-24 Бренд НАШЕ был придуман и запущен в 2017 году
+    .heading-3.mt-24.mb-24 Бренд НАШЕ был придуман и запущен в 2017 году
     .accordion__with-radius
       Accordion.with-bg(title='Стоимость и сроки доставки')
-        .product-page__accordion-content
+        .accordion__accordion-content
           .body-2-r Стоимость и сроки зависят от способа доставки и вашего региона. <a href='#'>Подробнее по ссылке</a>
       Accordion.with-bg(title='Как получить заказ?')
-        .product-page__accordion-content
+        .accordion__accordion-content
           .body-2-r Стоимость и сроки зависят от способа доставки и вашего региона. <a href='#'>Подробнее по ссылке</a>
       Accordion.with-bg(title='Как будет упакован заказ?')
-        .product-page__accordion-content
+        .accordion__accordion-content
           .body-2-r Стоимость и сроки зависят от способа доставки и вашего региона. <a href='#'>Подробнее по ссылке</a>
 </template>
 

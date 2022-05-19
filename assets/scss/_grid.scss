@@ -53,6 +53,23 @@
       width: auto;
     }
   }
+
+  &.no-paddings-all {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &.no-paddings {
+    @media (max-width: $s) {
+      padding-left: 0;
+      padding-right: 0;
+
+      .breadcrumbs {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
+  }
 }
 
 .page {
@@ -65,7 +82,7 @@
   // padding-right: 24px;
   // min-width: $minwidth;
   min-height: 100vh;
-  height: 100vh;
+  // height: 100vh;
   margin: auto;
   position: relative;
   // z-index: $layer-1;
@@ -74,6 +91,8 @@
   &__header {
     z-index: 90;
     flex-shrink: 0;
+    position: sticky;
+    top: -40px;
   }
 
   // &__content {
@@ -116,6 +135,14 @@
 
   &__content {
     min-height: calc(100vh - 702px);
+
+    @media (max-width: $s) {
+      padding-top: 56px;
+
+      &.main-page {
+        padding-top: 0;
+      }
+    }
 
     @media (max-width: $xs) {
       padding-top: 56px;

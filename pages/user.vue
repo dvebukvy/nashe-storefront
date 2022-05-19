@@ -20,12 +20,9 @@
           .orders(v-if='!showDetails')
             .heading-2.mb-24 Мои заказы
             .orders__cards(v-if='orders && orders.length')
-              OrderCard(
-                v-for='order in orders',
-                :key='order.id',
-                :data='order',
-                @click.native='openDetails(order)'
-              )
+              client-only
+                span(v-for='order in orders', :key='order.id')
+                  OrderCard(:data='order', :openDetail='openDetails')
             .orders__no-result(v-else)
               svg-icon.orders__no-result-icon(name='delivery')
               .body-1-r Вы ещё не сделали ни одного заказа

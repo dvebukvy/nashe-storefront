@@ -1,11 +1,22 @@
 .order-view {
     .breadcrumb {
+        display: inline-flex;
+        align-items: center;
         cursor: pointer;
 
         .icon {
             width: 16px;
             height: 16px;
             margin-right: 4px;
+        }
+
+        span {
+            line-height: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        &:hover {
+            color: $brand-primary;
         }
     }
 

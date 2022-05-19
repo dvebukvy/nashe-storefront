@@ -12,6 +12,8 @@
 @import "modules/search-input";
 @import "modules/spinner";
 
+@import "vue-select/dist/vue-select.css";
+
 .select {
   width: 100%;
   position: relative;
@@ -198,6 +200,8 @@
     }
 
     .vs__dropdown-option--selected {
+      color: $brand-primary;
+
       &::after {
         content: '';
         position: absolute;

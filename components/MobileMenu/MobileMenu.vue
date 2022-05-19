@@ -92,12 +92,12 @@
           :key='index'
         )
           .mobile-menu__link(:class='{ red: item.title === "Распродажа" }') {{ item.label }}
-    .mobile-menu__bottom
-      Button(label='Войти или зарегистрироваться' class='outline')
+    .mobile-menu__bottom(v-if='level === 1')
+      Button.outline(label='Войти или зарегистрироваться')
       .mobile-menu__contacts
         Contact
         Socials
-      Button(label='Перейти на оптовый сайт' link='/test')
+      Button(label='Перейти на оптовый сайт', link='/test')
 </template>
 
 <script>
@@ -133,7 +133,7 @@ export default {
     },
     showFirst() {
       this.level = 1
-    }
+    },
   },
   mounted() {
     this.$nuxt.$on('showFirst', this.showFirst)

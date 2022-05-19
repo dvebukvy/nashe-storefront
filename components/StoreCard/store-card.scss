@@ -6,6 +6,8 @@
 
     &__address {
         padding-right: 32px;
+        max-width: 50%;
+        width: 100%;
 
         .name {
             padding-bottom: 8px;
@@ -23,11 +25,14 @@
             max-width: none;
             padding-right: 0;
             padding-bottom: 16px;
+            max-width: 100%;
         }
     }
 
     &__hours {
         padding-right: 32px;
+        max-width: 25%;
+        width: 100%;
 
         .title {
             color: $gray-50;
@@ -37,14 +42,27 @@
         @media (max-width: $xs) {
             padding-right: 0;
             padding-bottom: 16px;
+            max-width: 100%
         }
     }
 
     &__phones {
+        max-width: 25%;
+        width: 100%;
+
         .title {
             color: $gray-50;
             padding-bottom: 8px;
         }
+
+        @media (max-width: $xs) {
+            max-width: 100%
+        }
+    }
+
+    @media (max-width: $xs) {
+        padding: 24px 0;
+        ;
     }
 
     &:first-child {
@@ -53,7 +71,6 @@
     }
 
     &:last-child {
-        border-top: none;
         padding-bottom: 0;
     }
 

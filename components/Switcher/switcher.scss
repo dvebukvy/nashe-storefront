@@ -4,22 +4,30 @@
     justify-content: space-between;
     align-items: center;
     padding: 4px;
-    width: 171px;
-    height: 40px;
+    width: 169px;
+    height: 41px;
     background: $white;
     border: 1px solid $gray-20;
     border-radius: 999px;
 
     label {
         font-size: 1.4rem;
-        line-height: 1.5rem;
+        line-height: 1.6rem;
         font-weight: 400;
-        padding: 8px 10px;
+        padding: 8px;
+        min-width: 80px;
+        border: 1px solid transparent;
+        cursor: pointer;
 
         &.active {
             background: $gray-10;
             border: 1px solid $brand-primary;
             border-radius: 999px;
+            color: $brand-primary;
+        }
+
+        &:hover {
+            color: $brand-primary;
         }
     }
 }

@@ -178,6 +178,16 @@
         fill: $brand-primary;
       }
     }
+
+    &.active {
+      #{$this}__link {
+        color: $brand-primary;
+      }
+
+      #{$this}__icon {
+        fill: $brand-primary;
+      }
+    }
   }
 
   &__content-categories {

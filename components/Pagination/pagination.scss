@@ -13,6 +13,7 @@
   &__flex {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   &__item {
@@ -30,7 +31,7 @@
     transition: background-color 0.3s ease, width 0.3s ease;
 
     &+& {
-      margin-left: 8px;
+      margin-left: 4px;
     }
 
     &:hover {
@@ -47,13 +48,20 @@
 
     &.button {
       width: 78px;
+      margin-left: 8px;
 
       &.prev {
         display: none;
+        margin-left: 0;
+        margin-right: 8px;
       }
 
       &>a {
         color: $brand-secondary;
+      }
+
+      @media (max-width: $xs) {
+        flex-basis: 100%;
       }
     }
 

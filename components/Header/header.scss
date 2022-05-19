@@ -41,15 +41,18 @@
     &.gray {
       color: $gray-50;
     }
+
+    color: $brand-secondary;
   }
 
 
 
   &__sublink-badge {
+    height: 24px;
     padding: 4px 8px;
     background-color: $brand-primary-12;
     color: $brand-primary;
-    @include fontSize(14, 16);
+    @include fontSize(14, 18);
     font-weight: 400;
     border-radius: 999px;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -90,6 +93,7 @@
 
   &__line {
     position: relative;
+    background: $white;
 
     &::after {
       width: 100%;
