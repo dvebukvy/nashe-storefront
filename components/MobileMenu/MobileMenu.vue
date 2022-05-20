@@ -141,8 +141,6 @@ export default {
 }
 </script>
 
-
-
 <style lang="scss">
 @import './mobile-menu.scss';
 @import '../Header/header.scss';

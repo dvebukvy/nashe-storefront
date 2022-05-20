@@ -153,8 +153,7 @@
       }
 
       &:hover {
-        border: 1px solid $gray-20;
-        background-color: $gray-20  !important;
+        border: 1px solid $brand-primary  !important;
 
         #{$this}__span {
           color: $brand-primary;

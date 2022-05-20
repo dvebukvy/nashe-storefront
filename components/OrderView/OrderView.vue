@@ -4,7 +4,7 @@
     svg-icon.icon(name='chevron-left-16')
     span.label-2-r К списку заказов
   .header
-    .title.heading-2 Заказ 23123
+    h1.title.heading-2.mt-0.mb-0 Заказ 23123
     .status Размещён
   .body
     .order-info.body-2-r

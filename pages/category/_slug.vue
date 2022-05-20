@@ -711,6 +711,16 @@ export default {
 
   &__filters {
     margin-right: 24px;
+    width: 312px;
+
+    @media (max-width: $l) {
+      width: 254px;
+    }
+
+    @media (max-width: $m) {
+      width: 283px;
+    }
+
     @media (max-width: $s) {
       display: none;
     }

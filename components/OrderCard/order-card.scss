@@ -77,7 +77,21 @@
         .order-data {
 
             &__delivery {
+                display: flex;
+                align-items: center;
                 margin-bottom: 4px;
+
+                .svg-icon {
+                    display: inline-flex;
+                    margin-right: 8px;
+                    width: 20px;
+                    height: 20px;
+
+                    .order-icon {
+                        width: 16px;
+                        height: 18px;
+                    }
+                }
             }
 
             &__address {
@@ -94,7 +108,21 @@
             }
 
             &__pay {
+                display: flex;
+                align-items: center;
                 margin-bottom: 4px;
+
+                .svg-icon {
+                    display: inline-flex;
+                    margin-right: 8px;
+                    width: 20px;
+                    height: 20px;
+
+                    .order-icon {
+                        width: 16px;
+                        height: 14px;
+                    }
+                }
             }
 
             &__pay-status {
@@ -182,6 +210,7 @@
         @media (max-width: $xs) {
             flex-direction: column;
             padding-right: 0;
+            padding: 16px;
 
             .order-data {
                 margin-bottom: 0px;
@@ -190,8 +219,8 @@
     }
 
     .order-icon {
-        margin-right: 8px;
-        width: 20px;
-        height: 20px;
+        // margin-right: 8px;
+        // width: 20px;
+        // height: 20px;
     }
 }

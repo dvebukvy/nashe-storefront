@@ -23,7 +23,11 @@
     .body(v-else, style='padding-bottom: 0')
       .body__title Найденные товары
       vue-custom-scrollbar.body__items.body__items-scroll
-        .item__found(v-for='item in 6')
+        nuxt-link.item__found(
+          v-for='item in 6',
+          :key='item',
+          to='/product/slug'
+        )
           img.image(src='/img/product-card-1.jpg')
           .content
             span.price.body-1-m 999 руб.

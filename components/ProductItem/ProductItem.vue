@@ -1,11 +1,16 @@
 <template lang="pug">
 .product-item
-  img.image(src='/img/product-card-1.jpg')
+  nuxt-link.image-link(
+    to='/product/slug',
+    @mouseover.native='nameHover = true',
+    @mouseleave.native='nameHover = false'
+  )
+    img.image(src='/img/product-card-1.jpg')
   .content
     .prices.body-1-m
       .prices__one 999 руб.
       .prices__total 4 995 руб.
-    .name.body-2-r Джемпер однотонный с круглой горловиной
+    nuxt-link.name.body-2-r(to='/product/slug', :class='{ hover: nameHover }') Джемпер однотонный с круглой горловиной
     .color.label-2-r
       .label Цвет:
       span Чёрный
@@ -22,7 +27,9 @@
 export default {
   props: ['data'],
   data() {
-    return {}
+    return {
+      nameHover: false,
+    }
   },
 }
 </script>

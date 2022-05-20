@@ -134,10 +134,12 @@
   }
 
   &__content {
-    min-height: calc(100vh - 702px);
+    min-height: calc(100vh - 112px);
+    padding-bottom: 128px;
 
     @media (max-width: $s) {
       padding-top: 56px;
+      padding-bottom: 96px;
 
       &.main-page {
         padding-top: 0;

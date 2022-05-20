@@ -62,6 +62,7 @@
 
       @media (max-width: $xs) {
         flex-basis: 100%;
+        margin-top: 8px;
       }
     }
 
@@ -78,6 +79,22 @@
       opacity: 1;
       width: unset;
       background-color: unset;
+
+      @media (max-width: 340px) {
+        width: 37.7px;
+      }
+    }
+
+    @media (max-width: 340px) {
+      width: 37.7px;
+
+      &:first-child {
+        margin-left: 0 !important;
+      }
+
+      &:nth-child(2) {
+        margin-left: 0 !important;
+      }
     }
   }
 

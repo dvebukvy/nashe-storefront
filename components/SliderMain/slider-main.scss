@@ -160,16 +160,32 @@
 
   & .swiper-pagination-bullet {
     position: relative;
-    width: 6px;
-    height: 6px;
+    // width: 6px;
+    // height: 6px;
+    width: 10px;
+    height: 10px;
     background-color: $gray-20;
     border-radius: 100%;
     overflow: hidden;
     margin-right: 8px;
+
+    &:first-child {
+      width: 6px;
+      height: 6px;
+    }
+
+    &:last-child {
+      width: 6px;
+      height: 6px;
+    }
+
+    transition: all .3s ease;
   }
 
   & .swiper-pagination-bullet-active {
     background-color: $brand-primary;
+    width: 10px !important;
+    height: 10px !important;
   }
 
   & .swiper-pagination-bullet-active-main {

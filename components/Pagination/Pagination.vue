@@ -1,15 +1,14 @@
 <template lang='pug'>
 .paginate
-  paginate(
-    class='pagination__flex'
+  paginate.pagination__flex(
     v-model='page',
     :page-range='pageRange',
-    :margin-pages='1'
+    :margin-pages='1',
     :page-count='pageCount',
     :click-handler='togglePage',
     :prev-text='"Назад"',
     :next-text='"Дальше"',
-    break-view-class='is-break'
+    break-view-class='is-break',
     container-class='pagination',
     page-class='pagination__item',
     page-link-class='pagination__link',
@@ -30,11 +29,11 @@ export default {
   computed: {
     pageRange() {
       if (this.pageCount > 10) {
-        return 3
+        return 5
       } else {
         return 6
       }
-    }
+    },
   },
   mounted() {
     // let pageSize = +this.$route.query['per-page'] || this.data.defaultPageSize

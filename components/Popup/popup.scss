@@ -22,10 +22,21 @@
                     display: flex;
                     align-items: center;
                     padding: 6px 12px 6px 14.5px;
+                    transition: all .3s ease;
                     cursor: pointer;
 
                     span {
                         padding-left: 10.5px;
+                    }
+
+                    .icon {
+                        transition: all 0.1s ease;
+                        width: 20px;
+                        height: 20px;
+                    }
+
+                    &:hover {
+                        color: $brand-primary;
                     }
                 }
 
@@ -46,10 +57,20 @@
                         .price {
                             display: block;
                             margin-bottom: 8px;
+                            color: $brand-secondary;
                         }
 
                         .desc {
                             // font-size: 1.4rem;
+                            color: $brand-secondary;
+                        }
+                    }
+
+                    &:hover {
+                        .content {
+                            .desc {
+                                color: $brand-primary;
+                            }
                         }
                     }
                 }

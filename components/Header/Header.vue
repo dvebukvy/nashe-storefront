@@ -629,8 +629,14 @@ export default {
   },
   methods: {
     openMenu() {
+      const body = document.querySelector('body')
       this.menuVisible = !this.menuVisible
       this.$nuxt.$emit('showFirst')
+      if (body.classList.contains('vm--block-scroll')) {
+        body.classList.remove('vm--block-scroll')
+      } else {
+        body.classList.add('vm--block-scroll')
+      }
     },
     openPopupSearch() {
       this.$modal.show(

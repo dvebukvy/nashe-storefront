@@ -1,7 +1,7 @@
 <template lang="pug">
 .page__content
   .container
-    Breadcrumbs(:data='breadcrumbs')
+    Breadcrumbs(:data='breadcrumbs', :class='{ "show-details": showDetails }')
     Headline.head-mobile(title='Личный кабинет')
     .user-content
       .left
@@ -31,7 +31,7 @@
             OrderView(:data='orderDetail', :back='backToList')
         .tab(v-if='menuSelected === "personal"')
           .personal
-            .heading-2.mb-24 Личные данные
+            h1.heading-2.mb-24.mt-0 Личные данные
             .personal__card(v-if='personal && personal.length')
               .personal__card-item
                 .label Фамилия
@@ -207,6 +207,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~/assets/scss/variables.scss';
 .user-content {
   display: flex;
   .left {
@@ -220,25 +221,25 @@ export default {
       position: absolute;
       min-width: 312px;
       height: 176px;
-      background-color: #faf6f2;
+      background-color: $gray-10;
       border-radius: 12px;
       &__item {
         display: flex;
         flex-direction: row;
         align-items: flex-start;
         padding: 14px 24px;
-        color: #662e2c;
+        color: $brand-secondary;
         width: 100%;
         cursor: pointer;
         &.active {
-          color: #cf643f;
-          box-shadow: inset 4px 0px 0px #cf643f;
+          color: $brand-primary;
+          box-shadow: inset 4px 0px 0px $brand-primary;
         }
         &:hover {
-          color: #cf643f;
+          color: $brand-primary;
         }
         &.exit {
-          color: #d60700;
+          color: $status-red;
         }
       }
 
@@ -286,7 +287,7 @@ export default {
         flex-direction: column;
         align-items: flex-start;
         padding: 24px 24px 32px;
-        background: #faf6f2;
+        background: $gray-10;
         border-radius: 12px;
 
         &-item {
@@ -353,6 +354,10 @@ export default {
             width: 100%;
           }
         }
+
+        @media (max-width: $xs) {
+          padding: 16px 16px 24px;
+        }
       }
     }
   }
@@ -364,6 +369,13 @@ export default {
 
   @media (max-width: $xs) {
     display: none;
+  }
+}
+.breadcrumbs {
+  &.show-details {
+    @media (max-width: $s) {
+      display: none;
+    }
   }
 }
 </style>

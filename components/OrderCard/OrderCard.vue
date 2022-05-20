@@ -13,12 +13,14 @@
     .order-data.body-2-r
       .order-data__item
         .order-data__delivery
-          svg-icon.order-icon(name='mark')
+          .svg-icon
+            svg-icon.order-icon(name='mark')
           span(v-if='data.deliveryType') {{ data.deliveryType }}
         .order-data__address(v-if='data.address') {{ data.address }}
       .order-data__item
         .order-data__pay
-          svg-icon.order-icon(name='wallet')
+          .svg-icon
+            svg-icon.order-icon(name='wallet')
           span(v-if='data.payType') {{ data.payType }}
         .order-data__pay-status(
           v-if='data.payStatus !== null',

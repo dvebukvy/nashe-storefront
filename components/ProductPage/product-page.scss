@@ -141,6 +141,7 @@
 
     @media (max-width: $xs) {
       margin-top: 16px;
+      padding: 16px;
     }
   }
 
@@ -232,6 +233,10 @@
 
     @media (max-width: $s) {
       display: flex;
+    }
+
+    @media (max-width: $xs) {
+      padding: 12px 16px;
     }
   }
 }
